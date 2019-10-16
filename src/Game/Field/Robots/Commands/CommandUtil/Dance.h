@@ -20,9 +20,6 @@ public:
   Dance(Robot*);
   ~Dance(void);
 
-  Robot * dancer;
-  CommandNode * head;
-
   void driveBackward(int);
   void driveForward(int);
   void orbitPointLeft(int);
@@ -31,6 +28,11 @@ public:
   void turnRight(int);
 
   void startDance(void);
+
+private:
+  Robot * dancer;
+  CommandNode * head;
+
   void addMove(CommandNode*);
   void addAnotherMove(CommandNode*, CommandNode*);
 };
