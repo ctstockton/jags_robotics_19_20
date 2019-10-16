@@ -11,15 +11,16 @@ builder of those commands, when they are called in the main function*/
 #include "../DriveCommands/TurningCommands/OrbitPointRight.h"
 #include "../DriveCommands/TurningCommands/TurnLeft.h"
 #include "../DriveCommands/TurningCommands/TurnRight.h"
+#include "../../Robot.h"
 
 class Dance
 {
 public:
   Dance(void);
-  Dance(CommandTarget);
+  Dance(Robot*);
   ~Dance(void);
 
-  CommandTarget dancer;
+  Robot * dancer;
   CommandNode * head;
 
   void driveBackward(int);

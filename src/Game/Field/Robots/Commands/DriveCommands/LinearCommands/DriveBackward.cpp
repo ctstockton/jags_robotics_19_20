@@ -3,7 +3,7 @@
 DriveBackward::DriveBackward(void)
 {}
 
-DriveBackward::DriveBackward(CommandTarget target, int distance)
+DriveBackward::DriveBackward(Robot * target, int distance)
 {
 this->slave = target;
 this->parameter1 = distance;
@@ -14,5 +14,5 @@ DriveBackward::~DriveBackward(void)
 
 void DriveBackward::execute(void)
 {
-  slave.target->driveSystem->driveBackward(this->parameter1);
+  slave->driveSystem->driveBackward(this->parameter1);
 }

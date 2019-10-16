@@ -5,7 +5,7 @@ Dance::Dance(void):
 head (0)
 {}
 
-Dance::Dance(CommandTarget bot):
+Dance::Dance(Robot * bot):
 head (0),
 dancer (bot)
 {}
