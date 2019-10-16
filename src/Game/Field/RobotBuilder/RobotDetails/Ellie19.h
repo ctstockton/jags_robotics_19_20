@@ -1,0 +1,14 @@
+#ifndef ROBOTBUILDER_ROBOTDETAILS_ELLIE19
+#define ROBOTBUILDER_ROBOTDETAILS_ELLIE19
+
+#define LEFT_MOTOR_1 1
+#define LEFT_MOTOR_2 4
+#define LEFT_MOTOR_3 7
+#define LEFT_MOTOR_4 null
+
+#define RIGHT_MOTOR_1 2
+#define RIGHT_MOTOR_2 5
+#define RIGHT_MOTOR_3 8
+#define RIGHT_MOTOR_4 null
+
+#endif
