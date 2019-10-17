@@ -74,23 +74,31 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
  #include "Game/Field/Robots/RobotBuilds/Ellie19.h"
+ #include "Game/Field/Robots/RobotBuilds/Bigboy.h"
  #include "Game/Field/Robots/Commands/CommandUtil/CommandTarget.h"
  //#include "Game/Field/Robots/Commands/DriveCommands/LinearCommands/DriveForward.h"
  #include "Game/Field/Robots/Commands/CommandUtil/Dance.h"
+ #include "Game/Field/Robots/Commands/CommandUtil/Raise.h"
  #include "Game/Field/Robots/Robot.h"
 
  void opcontrol() {
  	//create controller
  	pros::Controller master (CONTROLLER_MASTER);
 
+	Robot * Bigboy = new class Bigboy();
+	CommandList * routine = new Dance(Bigboy);
+	CommandList * set = new Raise(Bigboy);
+ 	Bigboy->obey(master);
+
  	//create the instance of the new robot
- 	Robot * Ellie = new Ellie19();
+ 	//Robot * Ellie = new Ellie19();
  	//create the command target that all commands in the dance will command
  	//CommandTarget Ellie;
  	//set the command target to the newly created robot
  	//Ellie.target = newBot;
  	//create the tree that all commands will be place
- 	Dance * routine = new Dance(Ellie);
+ 	//CommandList * routine = new Dance(Ellie);
+	//CommandList * set = new Raise(Ellie);
 
  	//add a move to the end of the routine
  	//routine->driveForward(10);
@@ -99,5 +107,5 @@ void autonomous() {}
  	//routine->startDance();
 
  	//after routine has finished, command the robot to obey the controller
- 	Ellie->obey(master);
+ 	//Ellie->obey(master);
 }

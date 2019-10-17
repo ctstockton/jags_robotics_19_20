@@ -3,7 +3,7 @@
 /*This is both the tree for the individual robot commands as well as the
 builder of those commands, when they are called in the main function*/
 #include "main.h"
-#include "CommandNode.h"
+#include "CommandList.h"
 
 #include "../DriveCommands/LinearCommands/DriveBackward.h"
 #include "../DriveCommands/LinearCommands/DriveForward.h"
@@ -11,9 +11,8 @@ builder of those commands, when they are called in the main function*/
 #include "../DriveCommands/TurningCommands/OrbitPointRight.h"
 #include "../DriveCommands/TurningCommands/TurnLeft.h"
 #include "../DriveCommands/TurningCommands/TurnRight.h"
-#include "../../Robot.h"
 
-class Dance
+class Dance : public CommandList
 {
 public:
   Dance(void);
@@ -27,13 +26,6 @@ public:
   void turnLeft(int);
   void turnRight(int);
 
-  void startDance(void);
-
-private:
-  Robot * dancer;
-  CommandNode * head;
-
-  void addMove(CommandNode*);
-  void addAnotherMove(CommandNode*, CommandNode*);
+  void executeList(void);
 };
 #endif

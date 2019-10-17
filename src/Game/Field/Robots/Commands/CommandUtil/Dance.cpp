@@ -1,82 +1,58 @@
 #include "main.h"
 #include "Dance.h"
 
-Dance::Dance(void):
-head (0)
-{}
+Dance::Dance(void)
+{
+  this->head = 0;
+}
 
-Dance::Dance(Robot * bot):
-head (0),
-dancer (bot)
-{}
+Dance::Dance(Robot * bot)
+{
+  this->head = 0;
+  this->actor = bot;
+}
 
 Dance::~Dance(void)
 {}
 
-void Dance::startDance(void)
-{
-  CommandNode * current = head;
-  while(current != 0){
-    current->move->execute();
-    current = current->nextMove;
-  }
-}
-
-void Dance::addMove(CommandNode * node)
-{
-  if (head == 0){
-    head = node;
-  }
-  else
-     addAnotherMove(node, head);
-}
-
-void Dance::addAnotherMove(CommandNode * node, CommandNode * head)
-{
-  if(head->nextMove == 0)
-    head->nextMove = node;
-  else
-    addAnotherMove(node, head->nextMove);
-}
-
 void Dance::driveBackward(int distance)
 {
-  Command * action = new DriveBackward(dancer, distance);
+  Command * action = new DriveBackward(this->actor, distance);
   CommandNode * newMove = new CommandNode(action);
   addMove(newMove);
 }
 
 void Dance::driveForward(int distance)
 {
-  Command * action = new DriveForward(dancer, distance);
+  Command * action = new DriveForward(this->actor, distance);
   CommandNode * newMove = new CommandNode(action);
   addMove(newMove);
 }
 
 void Dance::orbitPointLeft(int distance)
 {
-  Command * action = new OrbitPointLeft(dancer, distance);
+  Command * action = new OrbitPointLeft(this->actor, distance);
   CommandNode * newMove = new CommandNode(action);
   addMove(newMove);
 }
 
 void Dance::orbitPointRight(int distance)
 {
-  Command * action = new OrbitPointRight(dancer, distance);
+  Command * action = new OrbitPointRight(this->actor, distance);
   CommandNode * newMove = new CommandNode(action);
   addMove(newMove);
 }
 
 void Dance::turnLeft(int degrees)
 {
-  Command * action = new TurnLeft(dancer, degrees);
+  Command * action = new TurnLeft(this->actor, degrees);
   CommandNode * newMove = new CommandNode(action);
   addMove(newMove);
 }
 
 void Dance::turnRight(int degrees)
 {
-  Command * action = new TurnRight(dancer, degrees);
+  Command * action = new TurnRight(this->actor, degrees);
   CommandNode * newMove = new CommandNode(action);
   addMove(newMove);
 }
