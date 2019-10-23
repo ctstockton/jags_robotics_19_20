@@ -15,7 +15,5 @@ public:
 protected:
   pros::Motor * leftLiftUp;
   pros::Motor * rightLiftUp;
-  pros::Motor * leftLiftDown;
-  pros::Motor * rightLiftDown;
 };
 #endif
