@@ -7,6 +7,12 @@ class RightIntakeTrack : public SideRollingIntakeTrack
 {
 public:
   RightIntakeTrack(void);
+  RightIntakeTrack(int R1);
   virtual ~RightIntakeTrack(void);
+
+  void obey(pros::Controller);
+
+protected:
+  pros::Motor * rightIntakeMotor;
 };
 #endif

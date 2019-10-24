@@ -11,6 +11,9 @@
 
 #define TRAY_LIFT 11
 
+#define INTAKE_LEFT_MOTOR 1
+#define INTAKE_RIGHT_MOTOR 2
+
 #include "main.h"
 #include "../Robot.h"
 #include "../../Robots/Subsystems/Required/Drives/TankDrive/FourMotor/DoubleLeftTrack.h"
