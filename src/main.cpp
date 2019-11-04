@@ -93,8 +93,8 @@ void autonomous() {}
 
 ///*
 	Robot * Bigboy = new class Bigboy();
-	//CommandList * routine = new Dance(Bigboy);
-	//CommandList * set = new Raise(Bigboy);
+	CommandList * routine = new Dance(Bigboy);
+	CommandList * set = new Raise(Bigboy);
  	Bigboy->obey(master);
 //*/
 

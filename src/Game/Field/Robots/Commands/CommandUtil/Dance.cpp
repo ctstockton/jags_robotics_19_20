@@ -2,13 +2,11 @@
 #include "Dance.h"
 
 Dance::Dance(void)
-{
-  this->head = 0;
-}
+{}
 
-Dance::Dance(Robot * bot)
+Dance::Dance(Robot * bot):
+CommandList()
 {
-  this->head = 0;
   this->actor = bot;
 }
 

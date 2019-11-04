@@ -1,7 +1,9 @@
 #include "main.h"
 #include "CommandList.h"
 
-CommandList::CommandList(void)
+CommandList::CommandList(void):
+head (0),
+actor (0)
 {}
 
 CommandList::~CommandList(void)
