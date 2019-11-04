@@ -11,8 +11,12 @@ class TripleLeftTrack : public LeftDriveTrack
     ~TripleLeftTrack(void);
 
     void obey(pros::Controller);
-    void driveForward(void);
-    void turnAroundRight(void);
+    void turnRight(int);
+    void turnLeft(int);
+    void driveForward(int);
+    void driveBackward(int);
+    void orbitPointRight(int);
+    void orbitPointLeft(int);
 
   protected:
     pros::Motor * leftMotor1;

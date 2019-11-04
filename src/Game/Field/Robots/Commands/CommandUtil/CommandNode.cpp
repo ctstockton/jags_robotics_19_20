@@ -13,3 +13,8 @@ nextMove (0)
 
 CommandNode::~CommandNode(void)
 {}
+
+void CommandNode::execute(void)
+{
+  move->execute();
+}

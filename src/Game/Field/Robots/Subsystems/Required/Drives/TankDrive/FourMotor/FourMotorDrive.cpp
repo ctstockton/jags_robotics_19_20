@@ -22,26 +22,25 @@ void FourMotorDrive::obey(pros::Controller master)
   rightDriveTrack->obey(master);
 }
 
-void FourMotorDrive::turnRight(int)
+void FourMotorDrive::turnRight(int input)
 {
-//  leftTrack->turnRight();
-//  rightTrack->turnRight();
+
 }
 
-void FourMotorDrive::turnLeft(int)
+void FourMotorDrive::turnLeft(int input)
 {}
 
-void FourMotorDrive::driveForward(int)
+void FourMotorDrive::driveForward(int input)
 {
-//  leftTrack->driveForward();
-//  rightTrack->driveForward();
+  leftDriveTrack->driveForward(input * 900);
+  rightDriveTrack->driveForward(input * 900);
 }
 
-void FourMotorDrive::driveBackward(int)
+void FourMotorDrive::driveBackward(int input)
 {}
 
-void FourMotorDrive::orbitPointRight(int)
+void FourMotorDrive::orbitPointRight(int input)
 {}
 
-void FourMotorDrive::orbitPointLeft(int)
+void FourMotorDrive::orbitPointLeft(int input)
 {}

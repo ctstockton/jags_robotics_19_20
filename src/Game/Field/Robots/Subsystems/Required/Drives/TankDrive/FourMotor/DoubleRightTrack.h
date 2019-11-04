@@ -11,8 +11,12 @@ public:
   ~DoubleRightTrack(void);
 
   void obey(pros::Controller);
-  void turnAroundRight(void);
-  void driveForward(void);
+  void turnRight(int);
+  void turnLeft(int);
+  void driveForward(int);
+  void driveBackward(int);
+  void orbitPointRight(int);
+  void orbitPointLeft(int);
 
 protected:
   pros::Motor * rightMotor1;

@@ -9,7 +9,11 @@ public:
   virtual ~DriveTrack(void);
 
   virtual void obey(pros::Controller) = 0;
-  virtual void driveForward(void) = 0;
-  virtual void turnAroundRight(void) = 0;
+  virtual void turnRight(int) = 0;
+  virtual void turnLeft(int) = 0;
+  virtual void driveForward(int) = 0;
+  virtual void driveBackward(int) = 0;
+  virtual void orbitPointRight(int) = 0;
+  virtual void orbitPointLeft(int) = 0;
 };
 #endif

@@ -19,10 +19,10 @@ TrayLift::~TrayLift(void)
 
 void TrayLift::obey(pros::Controller master)
 {
-  if((master.get_digital(DIGITAL_Y) == 1) && (trayMotor->get_position() < 3900)){
+  if((master.get_digital(DIGITAL_Y) == 1) && (trayMotor->get_position() < 3800)){
     trayMotor->move(100);
   }
-  else if((master.get_digital(DIGITAL_X) == 1) && (trayMotor->get_position() > 0)){
+  else if((master.get_digital(DIGITAL_X) == 1) && (trayMotor->get_position() > 100)){
     trayMotor->move(-100);
   }
   else{

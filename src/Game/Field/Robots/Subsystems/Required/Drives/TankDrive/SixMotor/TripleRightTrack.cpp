@@ -25,12 +25,26 @@ void TripleRightTrack::obey(pros::Controller master)
   rightMotor3->move(master.get_analog(ANALOG_RIGHT_Y));
 }
 
-void TripleRightTrack::turnAroundRight(void)
+void TripleRightTrack::turnRight(int)
 {
-
+//  leftTrack->turnRight();
+//  rightTrack->turnRight();
 }
 
-void TripleRightTrack::driveForward(void)
+void TripleRightTrack::turnLeft(int)
+{}
+
+void TripleRightTrack::driveForward(int)
 {
-  rightMotor1->move_absolute(100, 100);
+//  leftTrack->driveForward();
+//  rightTrack->driveForward();
 }
+
+void TripleRightTrack::driveBackward(int)
+{}
+
+void TripleRightTrack::orbitPointRight(int)
+{}
+
+void TripleRightTrack::orbitPointLeft(int)
+{}

@@ -22,8 +22,51 @@ void DoubleRightTrack::obey(pros::Controller master)
   rightMotor2->move(master.get_analog(ANALOG_RIGHT_Y));
 }
 
-void DoubleRightTrack::turnAroundRight(void)
-{}
+void DoubleRightTrack::turnRight(int)
+{
+  rightMotor1->tare_position();
+  rightMotor2->tare_position();
+//  leftTrack->turnRight();
+//  rightTrack->turnRight();
+}
 
-void DoubleRightTrack::driveForward(void)
-{}
+void DoubleRightTrack::turnLeft(int)
+{
+  rightMotor1->tare_position();
+  rightMotor2->tare_position();
+}
+
+void DoubleRightTrack::driveForward(int input)
+{
+  rightMotor1->tare_position();
+  rightMotor2->tare_position();
+  bool drive = 1;
+  while (drive) {
+   if(rightMotor1->get_position() > input){
+     drive = 0;
+   }
+   rightMotor1->move(50);
+   rightMotor2->move(50);
+
+   // Continue running this loop as long as the motor is not within +-5 units of its goal
+   pros::delay(2);
+ }
+}
+
+void DoubleRightTrack::driveBackward(int)
+{
+  rightMotor1->tare_position();
+  rightMotor2->tare_position();
+}
+
+void DoubleRightTrack::orbitPointRight(int)
+{
+  rightMotor1->tare_position();
+  rightMotor2->tare_position();
+}
+
+void DoubleRightTrack::orbitPointLeft(int)
+{
+  rightMotor1->tare_position();
+  rightMotor2->tare_position();
+}

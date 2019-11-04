@@ -10,6 +10,8 @@ public:
   CommandNode(Command*);
   virtual ~CommandNode(void);
 
+  void execute(void);
+
   Command * move;
 
   CommandNode * nextMove;
