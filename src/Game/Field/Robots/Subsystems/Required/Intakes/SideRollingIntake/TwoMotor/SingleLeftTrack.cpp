@@ -2,15 +2,12 @@
 #include "main.h"
 
 SingleLeftIntakeTrack::SingleLeftIntakeTrack(void)
-{
-  this->leftMotorIntake = new pros::Motor(7);
-  this->leftMotorOutput = new pros::Motor(7, true);
-}
+{}
 
-SingleLeftIntakeTrack::SingleLeftIntakeTrack(int L1)
+SingleLeftIntakeTrack::SingleLeftIntakeTrack(int L1, pros::motor_gearset_e gear)
 {
-  this->leftMotorIntake = new pros::Motor(L1);
-  this->leftMotorOutput = new pros::Motor(L1, true);
+  this->leftMotorIntake = new pros::Motor(L1, gear);
+  this->leftMotorOutput = new pros::Motor(L1, gear, true);
 }
 
 SingleLeftIntakeTrack::~SingleLeftIntakeTrack(void)

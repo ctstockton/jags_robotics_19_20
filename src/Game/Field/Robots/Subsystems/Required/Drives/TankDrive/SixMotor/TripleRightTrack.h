@@ -7,7 +7,7 @@ class TripleRightTrack : public RightDriveTrack
 {
 public:
   TripleRightTrack(void);
-  TripleRightTrack(int R1, int R2, int R3);
+  TripleRightTrack(int R1, int R2, int R3, pros::motor_gearset_e gear);
   ~TripleRightTrack(void);
 
   void obey(pros::Controller);

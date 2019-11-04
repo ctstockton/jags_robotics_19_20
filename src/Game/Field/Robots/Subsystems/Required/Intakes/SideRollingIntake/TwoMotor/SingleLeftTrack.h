@@ -7,7 +7,7 @@ class SingleLeftIntakeTrack : public LeftIntakeTrack
 {
 public:
   SingleLeftIntakeTrack(void);
-  SingleLeftIntakeTrack(int L1);
+  SingleLeftIntakeTrack(int L1, pros::motor_gearset_e gear);
   ~SingleLeftIntakeTrack(void);
 
   void obey(pros::Controller);

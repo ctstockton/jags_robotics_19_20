@@ -7,7 +7,7 @@ class TwoMotorReverseDoubleForebar : public ReverseDoubleForebar
 {
 public:
   TwoMotorReverseDoubleForebar(void);
-  TwoMotorReverseDoubleForebar(int L1, int R1);
+  TwoMotorReverseDoubleForebar(int L1, int R1, pros::motor_gearset_e gear);
   ~TwoMotorReverseDoubleForebar(void);
 
   void obey(pros::Controller);

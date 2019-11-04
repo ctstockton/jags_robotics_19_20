@@ -2,15 +2,12 @@
 #include "FourMotorDrive.h"
 
 FourMotorDrive::FourMotorDrive(void)
-{
-  this->leftDriveTrack = new DoubleLeftTrack(1, 2);
-  this->rightDriveTrack = new DoubleRightTrack(3, 4);
-}
+{}
 
-FourMotorDrive::FourMotorDrive(int L1, int L2, int R1, int R2)
+FourMotorDrive::FourMotorDrive(int L1, int L2, int R1, int R2, pros::motor_gearset_e gear)
 {
-  this->leftDriveTrack = new DoubleLeftTrack(L1, L2);
-  this->rightDriveTrack = new DoubleRightTrack(R1, R2);
+  this->leftDriveTrack = new DoubleLeftTrack(L1, L2, gear);
+  this->rightDriveTrack = new DoubleRightTrack(R1, R2, gear);
 }
 
 FourMotorDrive::~FourMotorDrive(void)

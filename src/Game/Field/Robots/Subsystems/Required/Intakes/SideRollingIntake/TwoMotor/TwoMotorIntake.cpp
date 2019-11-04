@@ -2,15 +2,12 @@
 #include "main.h"
 
 TwoMotorIntake::TwoMotorIntake(void)
-{
-  this->leftIntakeTrack = new SingleLeftIntakeTrack(7);
-  this->rightIntakeTrack = new SingleRightIntakeTrack(8);
-}
+{}
 
-TwoMotorIntake::TwoMotorIntake(int L1, int R1)
+TwoMotorIntake::TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear)
 {
-  this->leftIntakeTrack = new SingleLeftIntakeTrack(L1);
-  this->rightIntakeTrack = new SingleRightIntakeTrack(R1);
+  this->leftIntakeTrack = new SingleLeftIntakeTrack(L1, gear);
+  this->rightIntakeTrack = new SingleRightIntakeTrack(R1, gear);
 }
 
 TwoMotorIntake::~TwoMotorIntake(void)

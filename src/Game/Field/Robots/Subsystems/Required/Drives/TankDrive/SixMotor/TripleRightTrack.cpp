@@ -2,17 +2,13 @@
 #include "TripleRightTrack.h"
 
 TripleRightTrack::TripleRightTrack(void)
-{
-  this->rightMotor1 = new pros::Motor (4, true);
-  this->rightMotor2 = new pros::Motor (5, true);
-  this->rightMotor3 = new pros::Motor (6, true);
-}
+{}
 
-TripleRightTrack::TripleRightTrack(int R1, int R2, int R3)
+TripleRightTrack::TripleRightTrack(int R1, int R2, int R3, pros::motor_gearset_e gear)
 {
-  this->rightMotor1 = new pros::Motor (R1, true);
-  this->rightMotor2 = new pros::Motor (R2, true);
-  this->rightMotor3 = new pros::Motor (R3, true);
+  this->rightMotor1 = new pros::Motor (R1, gear, true);
+  this->rightMotor2 = new pros::Motor (R2, gear, true);
+  this->rightMotor3 = new pros::Motor (R3, gear, true);
 }
 
 TripleRightTrack::~TripleRightTrack(void)

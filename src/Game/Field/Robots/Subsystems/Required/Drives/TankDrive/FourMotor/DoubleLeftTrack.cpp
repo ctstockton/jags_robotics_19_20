@@ -2,15 +2,12 @@
 #include "DoubleLeftTrack.h"
 
 DoubleLeftTrack::DoubleLeftTrack(void)
-{
-  this->leftMotor1 = new pros::Motor (1);
-  this->leftMotor2 = new pros::Motor (2);
-}
+{}
 
-DoubleLeftTrack::DoubleLeftTrack(int L1, int L2)
+DoubleLeftTrack::DoubleLeftTrack(int L1, int L2, pros::motor_gearset_e gear)
 {
-  this->leftMotor1 = new pros::Motor (L1);
-  this->leftMotor2 = new pros::Motor (L2);
+  this->leftMotor1 = new pros::Motor (L1, gear);
+  this->leftMotor2 = new pros::Motor (L2, gear);
 }
 
 DoubleLeftTrack::~DoubleLeftTrack(void)

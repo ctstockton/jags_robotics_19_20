@@ -9,7 +9,7 @@ class FourMotorDrive : public TankDrive
 {
 public:
   FourMotorDrive(void);
-  FourMotorDrive(int L1, int L2, int R1, int R2);
+  FourMotorDrive(int L1, int L2, int R1, int R2, pros::motor_gearset_e gear);
   virtual ~FourMotorDrive(void);
 
   TankDriveTrack * leftDriveTrack;

@@ -7,7 +7,7 @@ class DoubleLeftTrack : public LeftDriveTrack
 {
   public:
     DoubleLeftTrack(void);
-    DoubleLeftTrack(int L1, int L2);
+    DoubleLeftTrack(int L1, int L2, pros::motor_gearset_e gear);
     ~DoubleLeftTrack(void);
 
     void obey(pros::Controller);

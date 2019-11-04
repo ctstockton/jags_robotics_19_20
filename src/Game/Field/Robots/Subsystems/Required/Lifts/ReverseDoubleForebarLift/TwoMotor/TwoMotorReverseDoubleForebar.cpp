@@ -2,15 +2,12 @@
 #include "main.h"
 
 TwoMotorReverseDoubleForebar::TwoMotorReverseDoubleForebar(void)
-{
-  this->leftLiftUp = new pros::Motor(9);
-  this->rightLiftUp = new pros::Motor(10, true);
-}
+{}
 
-TwoMotorReverseDoubleForebar::TwoMotorReverseDoubleForebar(int L1, int R1)
+TwoMotorReverseDoubleForebar::TwoMotorReverseDoubleForebar(int L1, int R1, pros::motor_gearset_e gear)
 {
-  this->leftLiftUp = new pros::Motor(L1);
-  this->rightLiftUp = new pros::Motor(R1, true);
+  this->leftLiftUp = new pros::Motor(L1, gear);
+  this->rightLiftUp = new pros::Motor(R1, gear, true);
 }
 
 TwoMotorReverseDoubleForebar::~TwoMotorReverseDoubleForebar(void)
