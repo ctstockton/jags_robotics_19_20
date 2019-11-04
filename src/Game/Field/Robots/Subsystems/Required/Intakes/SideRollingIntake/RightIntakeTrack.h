@@ -7,7 +7,7 @@ class RightIntakeTrack : public SideRollingIntakeTrack
 {
 public:
   RightIntakeTrack(void);
-  RightIntakeTrack(int R1);
+  RightIntakeTrack(int R1, pros::motor_gearset_e gear);
   virtual ~RightIntakeTrack(void);
 
   void obey(pros::Controller);

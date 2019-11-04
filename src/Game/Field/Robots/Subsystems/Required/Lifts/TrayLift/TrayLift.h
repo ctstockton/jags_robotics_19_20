@@ -15,6 +15,5 @@ public:
 protected:
   pros::Motor * trayMotor;
   pros::Motor * trayMotorReverse;
-  int input;
 };
 #endif

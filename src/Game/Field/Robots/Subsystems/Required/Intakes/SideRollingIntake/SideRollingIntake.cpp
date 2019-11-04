@@ -2,15 +2,12 @@
 #include "main.h"
 
 SideRollingIntake::SideRollingIntake(void)
-{
-  this->leftIntakeTrack = new LeftIntakeTrack(11);
-  this->rightIntakeTrack = new RightIntakeTrack(12);
-}
+{}
 
-SideRollingIntake::SideRollingIntake(int L1, int R1)
+SideRollingIntake::SideRollingIntake(int L1, int R1, pros::motor_gearset_e gear)
 {
-  this->leftIntakeTrack = new LeftIntakeTrack(L1);
-  this->rightIntakeTrack = new RightIntakeTrack(R1);
+  this->leftIntakeTrack = new LeftIntakeTrack(L1, gear);
+  this->rightIntakeTrack = new RightIntakeTrack(R1, gear);
 }
 
 SideRollingIntake::~SideRollingIntake(void)

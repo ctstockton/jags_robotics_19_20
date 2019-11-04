@@ -4,9 +4,9 @@
 LeftIntakeTrack::LeftIntakeTrack(void)
 {}
 
-LeftIntakeTrack::LeftIntakeTrack(int L1)
+LeftIntakeTrack::LeftIntakeTrack(int L1, pros::motor_gearset_e gear)
 {
-  this->leftIntakeMotor = new pros::Motor(L1);
+  this->leftIntakeMotor = new pros::Motor(L1, gear);
 }
 
 LeftIntakeTrack::~LeftIntakeTrack(void)

@@ -8,11 +8,14 @@
 #define RIGHT_MOTOR_1 10
 #define RIGHT_MOTOR_2 18
 #define RIGHT_LIFT_MOTOR 20
+#define DRIVE_GEARSET pros::E_MOTOR_GEARSET_18
 
 #define TRAY_LIFT_MOTOR 11
+#define LIFT_GEARSET pros::E_MOTOR_GEARSET_36
 
 #define LEFT_INTAKE_MOTOR 1
 #define RIGHT_INTAKE_MOTOR 2
+#define INTAKE_GEARSET pros::E_MOTOR_GEARSET_36
 
 #include "main.h"
 #include "../Robot.h"
