@@ -23,13 +23,13 @@ void TwoMotorReverseDoubleForebar::obey(pros::Controller master)
 {
   if(master.get_digital(DIGITAL_L1) == 1)
   {
-    leftLiftUp->move(master.get_digital(DIGITAL_L1)*127);
-    rightLiftUp->move(master.get_digital(DIGITAL_L1)*127);
+    leftLiftUp->move(master.get_digital(DIGITAL_L1)*-127);
+    rightLiftUp->move(master.get_digital(DIGITAL_L1)*-127);
   }
   else if(master.get_digital(DIGITAL_L2) == 1)
   {
-    leftLiftUp->move(master.get_digital(DIGITAL_L2)*-127);
-    rightLiftUp->move(master.get_digital(DIGITAL_L2)*-127);
+    leftLiftUp->move(master.get_digital(DIGITAL_L2)*127);
+    rightLiftUp->move(master.get_digital(DIGITAL_L2)*127);
   }
   else
   {

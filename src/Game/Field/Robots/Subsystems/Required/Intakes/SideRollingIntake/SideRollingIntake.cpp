@@ -18,6 +18,7 @@ SideRollingIntake::~SideRollingIntake(void)
 
 void SideRollingIntake::obey(pros::Controller master)
 {
-  this->leftIntakeTrack->obey(master);
   this->rightIntakeTrack->obey(master);
+  this->leftIntakeTrack->obey(master);
+
 }
