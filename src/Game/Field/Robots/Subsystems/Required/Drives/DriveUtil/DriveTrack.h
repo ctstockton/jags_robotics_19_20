@@ -15,5 +15,7 @@ public:
   virtual void driveBackward(int) = 0;
   virtual void orbitPointRight(int) = 0;
   virtual void orbitPointLeft(int) = 0;
+
+  virtual void tarePosition(void) = 0;
 };
 #endif

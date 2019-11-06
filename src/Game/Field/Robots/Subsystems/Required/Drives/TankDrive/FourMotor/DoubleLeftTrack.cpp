@@ -49,23 +49,23 @@ void DoubleLeftTrack::driveForward(int input)
     leftMotor2->move(50);
 
     // Continue running this loop as long as the motor is not within +-5 units of its goal
-  pros::delay(2);
+    pros::delay(2);
   }
 }
 
 void DoubleLeftTrack::driveBackward(int)
 {
-  leftMotor1->tare_position();
-  leftMotor2->tare_position();
 }
 
 void DoubleLeftTrack::orbitPointRight(int)
 {
-  leftMotor1->tare_position();
-  leftMotor2->tare_position();
 }
 
 void DoubleLeftTrack::orbitPointLeft(int)
+{
+}
+
+void DoubleLeftTrack::tarePosition(void)
 {
   leftMotor1->tare_position();
   leftMotor2->tare_position();

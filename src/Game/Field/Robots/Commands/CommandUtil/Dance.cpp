@@ -13,6 +13,15 @@ CommandList()
 Dance::~Dance(void)
 {}
 
+  void Dance::executeList(void)
+  {
+    CommandNode * current = this->head;
+    while(current != 0){
+      current->move->execute();
+      current = current->nextMove;
+    }
+  }
+
 void Dance::driveBackward(int distance)
 {
   Command * action = new DriveBackward(this->actor, distance);

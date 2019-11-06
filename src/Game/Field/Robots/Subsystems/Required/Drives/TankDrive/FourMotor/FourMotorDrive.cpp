@@ -32,6 +32,8 @@ void FourMotorDrive::turnLeft(int input)
 
 void FourMotorDrive::driveForward(int input)
 {
+  leftDriveTrack->tarePosition();
+  rightDriveTrack->tarePosition();
   leftDriveTrack->driveForward(input * 900);
   rightDriveTrack->driveForward(input * 900);
 }

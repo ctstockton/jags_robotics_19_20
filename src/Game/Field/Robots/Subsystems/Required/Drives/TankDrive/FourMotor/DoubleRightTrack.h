@@ -18,6 +18,8 @@ public:
   void orbitPointRight(int);
   void orbitPointLeft(int);
 
+  void tarePosition(void);
+
 protected:
   pros::Motor * rightMotor1;
   pros::Motor * rightMotor2;

@@ -48,3 +48,6 @@ void TripleRightTrack::orbitPointRight(int)
 
 void TripleRightTrack::orbitPointLeft(int)
 {}
+
+void TripleRightTrack::tarePosition(void)
+{}

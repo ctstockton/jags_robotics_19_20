@@ -14,8 +14,9 @@ void CommandList::addMove(CommandNode * node)
   if (head == 0){
     head = node;
   }
-  else
+  else{
      addAnotherMove(node, head);
+   }
 }
 
 void CommandList::addAnotherMove(CommandNode * node, CommandNode * head)

@@ -5,8 +5,8 @@ DriveForward::DriveForward(void)
 
 DriveForward::DriveForward(Robot * target, int distance)
 {
-this->slave = target;
-this->parameter1 = distance;
+  this->slave = target;
+  this->parameter1 = distance;
 }
 
 DriveForward::~DriveForward(void)
