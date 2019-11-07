@@ -19,6 +19,7 @@ public:
   void orbitPointLeft(int);
 
   void tarePosition(void);
+  bool positionReached(int);
 
 protected:
   pros::Motor * rightMotor1;

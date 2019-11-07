@@ -36,6 +36,9 @@ void FourMotorDrive::driveForward(int input)
   rightDriveTrack->tarePosition();
   leftDriveTrack->driveForward(input * 900);
   rightDriveTrack->driveForward(input * 900);
+  while (!(leftDriveTrack->positionReached(input*900) || rightDriveTrack->positionReached(input*900)))  {
+    pros::delay(2);
+  }
 }
 
 void FourMotorDrive::driveBackward(int input)

@@ -74,8 +74,8 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
  //#include "Game/Field/Robots/RobotBuilds/Ellie19.h"
- //#include "Game/Field/Robots/RobotBuilds/Bigboy.h"
- #include "Game/Field/Robots/RobotBuilds/TRex.h"
+ #include "Game/Field/Robots/RobotBuilds/Bigboy.h"
+ //#include "Game/Field/Robots/RobotBuilds/TRex.h"
  #include "Game/Field/Robots/Commands/CommandUtil/CommandTarget.h"
  //#include "Game/Field/Robots/Commands/DriveCommands/LinearCommands/DriveForward.h"
  #include "Game/Field/Robots/Commands/CommandUtil/Dance.h"
@@ -86,24 +86,24 @@ void autonomous() {}
  	//create controller
  	pros::Controller master (CONTROLLER_MASTER);
 
-///*
+/*
 	Robot * TRex = new class TRex();
 	Dance * routine = new Dance(TRex);
 	Raise * set = new Raise(TRex);
-	routine->driveForward(4);
-	routine->executeList();
+	//routine->driveForward(4);
+	//routine->executeList();
 	TRex->obey(master);
 
-//*/
+*/
 
-/*
+///*
 	Robot * Bigboy = new class Bigboy();
 	Dance * routine = new Dance(Bigboy);
 	Raise * set = new Raise(Bigboy);
-	routine->driveForward(4);
+	routine->driveBackward(4);
 	routine->executeList();
  	Bigboy->obey(master);
-*/
+//*/
 
  	//create the instance of the new robot
  	//Robot * Ellie = new Ellie19();

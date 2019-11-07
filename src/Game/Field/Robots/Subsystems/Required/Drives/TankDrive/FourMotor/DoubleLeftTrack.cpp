@@ -38,23 +38,14 @@ void DoubleLeftTrack::turnLeft(int)
 
 void DoubleLeftTrack::driveForward(int input)
 {
-  leftMotor1->tare_position();
-  leftMotor2->tare_position();
-  bool drive = 1;
-  while (drive) {
-    if(leftMotor1->get_position() > input){
-      drive = 0;
-    }
-    leftMotor1->move(50);
-    leftMotor2->move(50);
-
-    // Continue running this loop as long as the motor is not within +-5 units of its goal
-    pros::delay(2);
-  }
+  leftMotor1->move_absolute(input, 100);
+  leftMotor2->move_absolute(input, 100);
 }
 
-void DoubleLeftTrack::driveBackward(int)
+void DoubleLeftTrack::driveBackward(int input)
 {
+  //leftMotor1->move_absolute(-input, -100);
+  //leftMotor2->move_absolute(-input, -100);
 }
 
 void DoubleLeftTrack::orbitPointRight(int)
@@ -69,4 +60,14 @@ void DoubleLeftTrack::tarePosition(void)
 {
   leftMotor1->tare_position();
   leftMotor2->tare_position();
+}
+
+bool DoubleLeftTrack::positionReached(int input)
+{
+  if (((leftMotor1->get_position() < input+5) && (leftMotor1->get_position() > input-5)) || ((leftMotor2->get_position() < input+5) && (leftMotor2->get_position() > input-5))) {
+    return true;
+  }
+  else{
+    return false;
+  }
 }

@@ -17,5 +17,6 @@ public:
   virtual void orbitPointLeft(int) = 0;
 
   virtual void tarePosition(void) = 0;
+  virtual bool positionReached(int) = 0;
 };
 #endif

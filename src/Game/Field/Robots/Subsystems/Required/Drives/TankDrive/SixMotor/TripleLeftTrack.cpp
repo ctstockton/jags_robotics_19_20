@@ -51,3 +51,8 @@ void TripleLeftTrack::orbitPointLeft(int)
 
 void TripleLeftTrack::tarePosition(void)
 {}
+
+bool TripleLeftTrack::positionReached(int)
+{
+  return false;
+}

@@ -19,6 +19,7 @@ class DoubleLeftTrack : public LeftDriveTrack
     void orbitPointLeft(int);
 
     void tarePosition(void);
+    bool positionReached(int);
 
   protected:
     pros::Motor * leftMotor1;
