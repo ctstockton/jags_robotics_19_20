@@ -44,8 +44,7 @@ void DoubleRightTrack::driveForward(int input)
 
 void DoubleRightTrack::driveBackward(int input)
 {
-  //rightMotor1->move_absolute(-input, -100);
-  //rightMotor2->move_absolute(-input, -100);
+  driveForward(input);
 }
 
 void DoubleRightTrack::orbitPointRight(int)

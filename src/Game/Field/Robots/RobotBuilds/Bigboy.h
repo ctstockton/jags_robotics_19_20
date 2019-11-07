@@ -38,5 +38,7 @@ public:
   void obey(pros::Controller);
 
   Lift * trayLiftSystem;
+private:
+  void buttonCheck(pros::Controller);
 };
 #endif

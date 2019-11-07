@@ -16,5 +16,7 @@ public:
   Lift * liftSystem;
 
   virtual void obey(pros::Controller) = 0;
+protected:
+  //virtual void buttonCheck(pros::Controller) = 0;
 };
 #endif

@@ -42,7 +42,16 @@ void FourMotorDrive::driveForward(int input)
 }
 
 void FourMotorDrive::driveBackward(int input)
-{}
+{
+  int inputR = -input;
+  leftDriveTrack->tarePosition();
+  rightDriveTrack->tarePosition();
+  leftDriveTrack->driveBackward(inputR * 900);
+  rightDriveTrack->driveBackward(inputR * 900);
+  while (!(leftDriveTrack->positionReached(inputR*900) || rightDriveTrack->positionReached(inputR*900)))  {
+    pros::delay(2);
+  }
+}
 
 void FourMotorDrive::orbitPointRight(int input)
 {}

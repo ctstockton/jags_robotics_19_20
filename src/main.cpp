@@ -100,7 +100,8 @@ void autonomous() {}
 	Robot * Bigboy = new class Bigboy();
 	Dance * routine = new Dance(Bigboy);
 	Raise * set = new Raise(Bigboy);
-	routine->driveBackward(4);
+	routine->driveForward(2);
+	routine->driveBackward(2);
 	routine->executeList();
  	Bigboy->obey(master);
 //*/

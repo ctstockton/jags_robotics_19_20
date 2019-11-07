@@ -14,12 +14,18 @@ Bigboy::~Bigboy(void)
 
 void Bigboy::obey(pros::Controller master)
 {
-
   while (true) {
     driveSystem->obey(master);
     liftSystem->obey(master);
     intakeSystem->obey(master);
     trayLiftSystem->obey(master);
+    buttonCheck(master);
     pros::delay(2);
   }
 }
+/*
+void Bigboy::buttonCheck(pros::Controller master){
+  if(master.get_digital(DIGITAL_DOWN)){
+    driveSystem->runScoreRoutine();
+  }
+}*/
