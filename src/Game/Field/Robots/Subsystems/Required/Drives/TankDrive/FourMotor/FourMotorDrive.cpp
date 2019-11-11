@@ -22,6 +22,24 @@ void FourMotorDrive::obey(pros::Controller master)
   rightDriveTrack->obey(master);
 }
 
+void FourMotorDrive::executeCommand(int * input)
+{
+  switch (input[0]){
+    case 0: driveBackward(input[1]);
+    break;
+    case 1: driveForward(input[1]);
+    break;
+    case 2: orbitPointLeft(input[1]);
+    break;
+    case 3: orbitPointRight(input[1]);
+    break;
+    case 4: turnLeft(input[1]);
+    break;
+    case 5: turnRight(input[1]);
+    break;
+  }
+}
+
 void FourMotorDrive::turnRight(int input)
 {
 

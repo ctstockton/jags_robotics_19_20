@@ -6,7 +6,9 @@ TurnLeft::TurnLeft(void)
 TurnLeft::TurnLeft(Robot * target, int degrees)
 {
   this->slave = target;
-  this->parameter1 = degrees;
+  parameters = new int[2];
+  this->parameters[0] = 4;
+  this->parameters[1] = degrees;
 }
 
 TurnLeft::~TurnLeft(void)
@@ -14,5 +16,5 @@ TurnLeft::~TurnLeft(void)
 
 void TurnLeft::execute(void)
 {
-  slave->driveSystem->turnLeft(this->parameter1);
+  slave->driveSystem->executeCommand(this->parameters);
 }

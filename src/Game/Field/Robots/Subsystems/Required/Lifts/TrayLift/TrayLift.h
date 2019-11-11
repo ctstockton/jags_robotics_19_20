@@ -11,7 +11,7 @@ public:
   ~TrayLift(void);
 
   void obey(pros::Controller);
-
+  void executeCommand(int*);
 protected:
   pros::Motor * trayMotor;
   pros::Motor * trayMotorReverse;

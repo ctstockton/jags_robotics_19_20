@@ -6,7 +6,9 @@ TurnRight::TurnRight(void)
 TurnRight::TurnRight(Robot * target, int degrees)
 {
   this->slave = target;
-  this->parameter1 = degrees;
+  parameters = new int[2];
+  this->parameters[0] = 5;
+  this->parameters[1] = degrees;
 }
 
 TurnRight::~TurnRight(void)
@@ -14,5 +16,5 @@ TurnRight::~TurnRight(void)
 
 void TurnRight::execute(void)
 {
-  slave->driveSystem->turnRight(this->parameter1);
+  slave->driveSystem->executeCommand(this->parameters);
 }

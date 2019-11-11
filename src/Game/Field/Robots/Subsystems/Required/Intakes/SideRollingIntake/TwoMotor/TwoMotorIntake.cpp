@@ -21,3 +21,6 @@ void TwoMotorIntake::obey(pros::Controller master)
   leftIntakeTrack->obey(master);
   rightIntakeTrack->obey(master);
 }
+
+void TwoMotorIntake::executeCommand(int * input)
+{}

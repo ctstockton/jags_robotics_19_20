@@ -17,5 +17,6 @@ public:
   SideRollingIntakeTrack * rightIntakeTrack;
 
   void obey(pros::Controller);
+  void executeCommand(int*);
 };
 #endif

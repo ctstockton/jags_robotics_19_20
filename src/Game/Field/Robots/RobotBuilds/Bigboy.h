@@ -23,9 +23,9 @@
 #include "../../Robots/Subsystems/Required/Drives/TankDrive/FourMotor/DoubleRightTrack.h"
 #include "../../Robots/Subsystems/Required/Drives/TankDrive/FourMotor/FourMotorDrive.h"
 #include "../../Robots/Subsystems/Required/Lifts/ReverseDoubleForebarLift/TwoMotor/TwoMotorReverseDoubleForebar.h"
-#include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/SideRollingIntake.h"
-#include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/LeftIntakeTrack.h"
-#include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/RightIntakeTrack.h"
+#include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/TwoMotor/TwoMotorIntake.h"
+#include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/TwoMotor/SingleLeftTrack.h"
+#include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/TwoMotor/SingleRightTrack.h"
 #include "../../Robots/Subsystems/Required/Lifts/TrayLift/TrayLift.h"
 #include "../../Robots/Subsystems/Required/Lifts/Lift.h"
 

@@ -6,7 +6,9 @@ DriveForward::DriveForward(void)
 DriveForward::DriveForward(Robot * target, int distance)
 {
   this->slave = target;
-  this->parameter1 = distance;
+  parameters = new int[2];
+  this->parameters[0] = 1;
+  this->parameters[1] = distance;
 }
 
 DriveForward::~DriveForward(void)
@@ -14,5 +16,5 @@ DriveForward::~DriveForward(void)
 
 void DriveForward::execute(void)
 {
-  slave->driveSystem->driveForward(this->parameter1);
+  slave->driveSystem->executeCommand(this->parameters);
 }

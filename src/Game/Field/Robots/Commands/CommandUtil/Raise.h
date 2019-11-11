@@ -12,5 +12,7 @@ public:
   Raise(void);
   Raise(Robot*);
   ~Raise(void);
+
+  void executeList(int*);
 };
 #endif

@@ -29,3 +29,6 @@ void TrayLift::obey(pros::Controller master)
     trayMotor->move(0);
   }
 }
+
+void TrayLift::executeCommand(int * input)
+{}

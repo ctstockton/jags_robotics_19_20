@@ -11,7 +11,7 @@ public:
   ~TwoMotorReverseDoubleForebar(void);
 
   void obey(pros::Controller);
-
+  void executeCommand(int*);
 protected:
   pros::Motor * leftLiftUp;
   pros::Motor * rightLiftUp;

@@ -11,9 +11,9 @@ public:
   Robot(void);
   virtual ~Robot(void);
 
-  Drive * driveSystem;
-  Intake * intakeSystem;
-  Lift * liftSystem;
+  Subsystem * driveSystem;
+  Subsystem * intakeSystem;
+  Subsystem * liftSystem;
 
   virtual void obey(pros::Controller) = 0;
 protected:

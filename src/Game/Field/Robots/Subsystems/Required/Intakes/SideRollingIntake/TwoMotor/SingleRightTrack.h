@@ -13,7 +13,6 @@ public:
   void obey(pros::Controller);
 
 protected:
-  pros::Motor * rightMotorIntake;
-  pros::Motor * rightMotorOutput;
+  pros::Motor * rightIntakeMotor;
 };
 #endif

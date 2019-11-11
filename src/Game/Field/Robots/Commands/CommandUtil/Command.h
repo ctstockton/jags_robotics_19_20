@@ -9,7 +9,7 @@ public:
   virtual ~Command(void);
 
   Robot * slave;
-  int parameter1, parameter2;
+  int * parameters;
 
   virtual void execute(void) = 0;
 };

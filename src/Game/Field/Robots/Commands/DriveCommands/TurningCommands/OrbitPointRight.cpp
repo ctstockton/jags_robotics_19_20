@@ -6,7 +6,9 @@ OrbitPointRight::OrbitPointRight(void)
 OrbitPointRight::OrbitPointRight(Robot * target, int degrees)
 {
   this->slave = target;
-  this->parameter1 = degrees;
+  parameters = new int[2];
+  this->parameters[0] = 3;
+  this->parameters[1] = degrees;
 }
 
 OrbitPointRight::~OrbitPointRight(void)
@@ -14,5 +16,5 @@ OrbitPointRight::~OrbitPointRight(void)
 
 void OrbitPointRight::execute(void)
 {
-  slave->driveSystem->orbitPointRight(this->parameter1);
+  slave->driveSystem->executeCommand(this->parameters);
 }

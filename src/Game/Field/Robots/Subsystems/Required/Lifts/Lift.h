@@ -8,7 +8,5 @@ class Lift : public Subsystem
 public:
   Lift(void);
   virtual ~Lift(void);
-
-  virtual void obey(pros::Controller) = 0;
 };
 #endif

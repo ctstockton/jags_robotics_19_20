@@ -9,12 +9,6 @@ class SideRollingIntake : public Intake
 {
 public:
   SideRollingIntake(void);
-  SideRollingIntake(int L1, int R1, pros::motor_gearset_e gear);
   virtual ~SideRollingIntake(void);
-
-  SideRollingIntakeTrack * leftIntakeTrack;
-  SideRollingIntakeTrack * rightIntakeTrack;
-
-  void obey(pros::Controller);
 };
 #endif

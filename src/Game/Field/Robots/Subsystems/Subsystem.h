@@ -9,5 +9,6 @@ public:
   virtual ~Subsystem(void);
 
   virtual void obey(pros::Controller) = 0;
+  virtual void executeCommand(int*) = 0;
 };
 #endif

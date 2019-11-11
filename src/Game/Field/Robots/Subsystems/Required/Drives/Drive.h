@@ -9,7 +9,7 @@ public:
   Drive(void);
   virtual ~Drive(void);
 
-  virtual void obey(pros::Controller) = 0;
+protected:
   virtual void turnRight(int) = 0;
   virtual void turnLeft(int) = 0;
   virtual void driveForward(int) = 0;

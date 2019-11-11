@@ -34,3 +34,6 @@ void TwoMotorReverseDoubleForebar::obey(pros::Controller master)
     rightLiftUp->move(0);
   }
 }
+
+void TwoMotorReverseDoubleForebar::executeCommand(int * input)
+{}
