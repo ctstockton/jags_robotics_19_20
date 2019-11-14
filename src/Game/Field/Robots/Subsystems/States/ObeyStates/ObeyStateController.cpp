@@ -10,12 +10,10 @@ ObeyStateController::~ObeyStateController(void)
 {}
 
 void ObeyStateController::obey(pros::Controller master)
-{std::cout << this->currentState << std::endl;
+{
   this->currentState = &this->defaultState;
-  std::cout << this->currentState << std::endl;
   bool obeyLoop = true;
   while(obeyLoop){
-    //std::cout << "while loop executing\n";
     currentState->obey(master, this->subsystemList);
     targetState = this->currentState->changeState(master);
     switch(targetState){

@@ -12,7 +12,8 @@ TRex::TRex(void)
   subsystemList[2] = intakeSystem;
   this->trayLiftSystem = new TrayLift(TRAY_LIFT_MOTOR, LIFT_GEARSET);
   subsystemList[3] = trayLiftSystem;
-  obeyStateController.getSubsystemList(subsystemList);
+  subsystemList[4] = 0;
+  obeyStateController->setSubsystemList(subsystemList);
 }
 
 TRex::~TRex(void)
@@ -26,12 +27,5 @@ TRex::~TRex(void)
 
 void TRex::obey(pros::Controller master)
 {
-
-  while (true) {
-    driveSystem->obey(master);
-    liftSystem->obey(master);
-    intakeSystem->obey(master);
-    trayLiftSystem->obey(master);
-    pros::delay(2);
-  }
+  obeyStateController->obey(master);
 }

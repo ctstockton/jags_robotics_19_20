@@ -7,6 +7,7 @@ SingleRightIntakeTrack::SingleRightIntakeTrack(void)
 SingleRightIntakeTrack::SingleRightIntakeTrack(int R1, pros::motor_gearset_e gear)
 {
   this->rightIntakeMotor = new pros::Motor(R1, gear, true);
+  this->rightIntakeMotor->tare_position();
 }
 
 SingleRightIntakeTrack::~SingleRightIntakeTrack(void)

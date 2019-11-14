@@ -7,6 +7,7 @@ SingleLeftIntakeTrack::SingleLeftIntakeTrack(void)
 SingleLeftIntakeTrack::SingleLeftIntakeTrack(int L1, pros::motor_gearset_e gear)
 {
   this->leftIntakeMotor = new pros::Motor(L1, gear);
+  this->leftIntakeMotor->tare_position();
 }
 
 SingleLeftIntakeTrack::~SingleLeftIntakeTrack(void)
@@ -16,12 +17,17 @@ SingleLeftIntakeTrack::~SingleLeftIntakeTrack(void)
 
 void SingleLeftIntakeTrack::obey(pros::Controller master)
 {
-  if(master.get_digital(DIGITAL_R1) == 1)
+  if(master.get_digital(DIGITAL_R1) == 1){
     leftIntakeMotor->move(master.get_digital(DIGITAL_R1)*127);
-  else if(master.get_digital(DIGITAL_R2) == 1)
+    leftIntakeMotor->tare_position();
+  }
+  else if(master.get_digital(DIGITAL_R2) == 1){
     leftIntakeMotor->move(master.get_digital(DIGITAL_R2)*-127);
-  else
+    leftIntakeMotor->tare_position();
+  }
+  else{
     leftIntakeMotor->move(0);
+  }
 }
 
 void SingleLeftIntakeTrack::scoringObey(pros::Controller master)
