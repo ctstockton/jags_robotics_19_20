@@ -9,6 +9,7 @@ public:
   virtual ~DriveTrack(void);
 
   virtual void obey(pros::Controller) = 0;
+  virtual void scoringObey(pros::Controller) = 0;
   virtual void turnRight(int) = 0;
   virtual void turnLeft(int) = 0;
   virtual void driveForward(int) = 0;

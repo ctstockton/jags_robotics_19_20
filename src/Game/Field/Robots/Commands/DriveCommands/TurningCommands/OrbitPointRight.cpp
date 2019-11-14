@@ -12,7 +12,9 @@ OrbitPointRight::OrbitPointRight(Robot * target, int degrees)
 }
 
 OrbitPointRight::~OrbitPointRight(void)
-{}
+{
+  delete parameters;
+}
 
 void OrbitPointRight::execute(void)
 {

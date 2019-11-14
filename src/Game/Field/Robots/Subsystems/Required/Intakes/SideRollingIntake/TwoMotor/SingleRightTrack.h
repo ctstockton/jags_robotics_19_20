@@ -11,8 +11,9 @@ public:
   ~SingleRightIntakeTrack(void);
 
   void obey(pros::Controller);
+  void scoringObey(pros::Controller);
 
-protected:
+private:
   pros::Motor * rightIntakeMotor;
 };
 #endif

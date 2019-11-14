@@ -9,5 +9,6 @@ public:
   virtual ~IntakeTrack(void);
 
   virtual void obey(pros::Controller) = 0;
+  virtual void scoringObey(pros::Controller) = 0;
 };
 #endif

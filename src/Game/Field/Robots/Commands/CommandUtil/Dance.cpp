@@ -17,8 +17,9 @@ Dance::~Dance(void)
 void Dance::executeList(void)
 {
   CommandNode * current = this->head;
-  std::cout << "dance list is executing\n";
+  //std::cout << "dance list is executing\n";
   while(current != 0){
+    //std::cout << "dance list is executing\n";
     current->move->execute();
     current = current->nextMove;
   }
@@ -26,7 +27,7 @@ void Dance::executeList(void)
 
 void Dance::driveBackward(int distance)
 {
-  std::cout << "drivebackward command is being created\n";
+  //std::cout << "drivebackward command is being created\n";
   Command * action = new DriveBackward(this->actor, distance);
   CommandNode * newMove = new CommandNode(action);
   addMove(newMove);

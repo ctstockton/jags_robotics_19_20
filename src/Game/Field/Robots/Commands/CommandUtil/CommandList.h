@@ -10,7 +10,7 @@ public:
   CommandList(void);
   virtual ~CommandList(void);
 
-  virtual void executeList(int*);
+  virtual void executeList(void);
 
 protected:
   Robot * actor;

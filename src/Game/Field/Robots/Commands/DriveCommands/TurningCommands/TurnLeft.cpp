@@ -12,7 +12,9 @@ TurnLeft::TurnLeft(Robot * target, int degrees)
 }
 
 TurnLeft::~TurnLeft(void)
-{}
+{
+  delete parameters;
+}
 
 void TurnLeft::execute(void)
 {

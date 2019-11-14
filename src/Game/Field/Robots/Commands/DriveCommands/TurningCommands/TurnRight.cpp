@@ -12,7 +12,9 @@ TurnRight::TurnRight(Robot * target, int degrees)
 }
 
 TurnRight::~TurnRight(void)
-{}
+{
+  delete parameters;
+}
 
 void TurnRight::execute(void)
 {

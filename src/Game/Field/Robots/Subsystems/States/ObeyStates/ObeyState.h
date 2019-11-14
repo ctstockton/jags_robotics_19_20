@@ -8,7 +8,5 @@ class ObeyState : public State
 public:
   ObeyState();
   virtual ~ObeyState();
-
-  virtual void obey(pros::Controller) = 0;
 };
 #endif

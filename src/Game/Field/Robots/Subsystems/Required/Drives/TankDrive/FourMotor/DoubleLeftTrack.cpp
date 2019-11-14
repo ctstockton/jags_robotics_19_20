@@ -22,6 +22,12 @@ void DoubleLeftTrack::obey(pros::Controller master)
   leftMotor2->move(master.get_analog(ANALOG_LEFT_Y));
 }
 
+void DoubleLeftTrack::scoringObey(pros::Controller master)
+{
+  leftMotor1->move(master.get_analog(ANALOG_RIGHT_Y));
+  leftMotor2->move(master.get_analog(ANALOG_RIGHT_Y));
+}
+
 void DoubleLeftTrack::turnRight(int)
 {
   leftMotor1->tare_position();

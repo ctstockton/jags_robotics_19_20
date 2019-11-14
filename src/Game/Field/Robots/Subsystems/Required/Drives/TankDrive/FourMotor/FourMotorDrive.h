@@ -16,6 +16,7 @@ public:
   TankDriveTrack * rightDriveTrack;
 
   void obey(pros::Controller);
+  void scoringObey(pros::Controller);
   void executeCommand(int*);
 
 private:

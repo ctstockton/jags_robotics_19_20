@@ -13,10 +13,11 @@ public:
   TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear);
   virtual ~TwoMotorIntake(void);
 
+  void obey(pros::Controller);
+  void scoringObey(pros::Controller);
+  void executeCommand(int*);
+private:
   SideRollingIntakeTrack * leftIntakeTrack;
   SideRollingIntakeTrack * rightIntakeTrack;
-
-  void obey(pros::Controller);
-  void executeCommand(int*);
 };
 #endif

@@ -7,11 +7,8 @@ class State
 public:
   State(void);
   virtual ~State(void);
-  void setRobotSubsystems(void);
-  Subsystem * getRobotSubsystem(int);
 
-protected:
-  virtual void changeState() = 0;
-  Subsystem * robotSubsystems;
+  virtual void obey(pros::Controller, Subsystem**) = 0;
+  virtual int changeState(pros::Controller) = 0;
 };
 #endif

@@ -1,7 +1,8 @@
 #include "main.h"
 #include "Robot.h"
 
-Robot::Robot(void)
+Robot::Robot(void):
+obeyStateController (new ObeyStateController())
 {}
 
 Robot::~Robot(void)

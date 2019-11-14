@@ -12,7 +12,9 @@ OrbitPointLeft::OrbitPointLeft(Robot * target, int degrees)
 }
 
 OrbitPointLeft::~OrbitPointLeft(void)
-{}
+{
+  delete parameters;
+}
 
 void OrbitPointLeft::execute(void)
 {

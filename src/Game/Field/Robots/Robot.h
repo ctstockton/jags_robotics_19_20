@@ -4,6 +4,8 @@
 #include "Subsystems/Required/Drives/Drive.h"
 #include "Subsystems/Required/Intakes/Intake.h"
 #include "Subsystems/Required/Lifts/Lift.h"
+#include "Subsystems/States/StateController.h"
+#include "Subsystems/States/ObeyStates/ObeyStateController.h"
 
 class Robot
 {
@@ -17,6 +19,7 @@ public:
 
   virtual void obey(pros::Controller) = 0;
 protected:
-  //virtual void buttonCheck(pros::Controller) = 0;
+  StateController * obeyStateController;
+  Subsystem ** subsystemList;
 };
 #endif

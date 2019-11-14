@@ -35,5 +35,11 @@ void TwoMotorReverseDoubleForebar::obey(pros::Controller master)
   }
 }
 
+void TwoMotorReverseDoubleForebar::scoringObey(pros::Controller master)
+{
+  obey(master);
+}
+
+
 void TwoMotorReverseDoubleForebar::executeCommand(int * input)
 {}

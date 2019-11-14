@@ -11,6 +11,7 @@ class TripleLeftTrack : public LeftDriveTrack
     ~TripleLeftTrack(void);
 
     void obey(pros::Controller);
+    void scoringObey(pros::Controller);
     void turnRight(int);
     void turnLeft(int);
     void driveForward(int);

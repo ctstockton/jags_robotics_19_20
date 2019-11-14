@@ -23,3 +23,8 @@ void SingleRightIntakeTrack::obey(pros::Controller master)
   else
     rightIntakeMotor->move(0);
 }
+
+void SingleRightIntakeTrack::scoringObey(pros::Controller master)
+{
+    rightIntakeMotor->move(master.get_analog(ANALOG_RIGHT_Y)*sqrt(2));
+}

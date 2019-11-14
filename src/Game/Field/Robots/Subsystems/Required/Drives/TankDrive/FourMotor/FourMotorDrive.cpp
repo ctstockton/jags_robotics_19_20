@@ -22,6 +22,12 @@ void FourMotorDrive::obey(pros::Controller master)
   rightDriveTrack->obey(master);
 }
 
+void FourMotorDrive::scoringObey(pros::Controller master)
+{
+  leftDriveTrack->scoringObey(master);
+  rightDriveTrack->scoringObey(master);
+}
+
 void FourMotorDrive::executeCommand(int * input)
 {
   switch (input[0]){
@@ -52,6 +58,7 @@ void FourMotorDrive::driveForward(int input)
 {
   leftDriveTrack->tarePosition();
   rightDriveTrack->tarePosition();
+  std::cout << leftDriveTrack->positionReached(input*900) << std::endl;
   leftDriveTrack->driveForward(input * 900);
   rightDriveTrack->driveForward(input * 900);
   while (!(leftDriveTrack->positionReached(input*900) || rightDriveTrack->positionReached(input*900)))  {
