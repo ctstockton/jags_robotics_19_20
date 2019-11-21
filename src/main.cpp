@@ -95,7 +95,7 @@ void autonomous() {}
 	routine->driveForward(4);
 	routine->turnRight(180);
 	routine->executeList();
-	//TRex->obey(master);
+	TRex->obey(master);
 
 //*/
 

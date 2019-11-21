@@ -53,9 +53,9 @@ void FourMotorDrive::turnRight(int input)
   input = input*turnConstant;
   leftDriveTrack->tarePosition();
   rightDriveTrack->tarePosition();
-  leftDriveTrack->turnLeft(-input);
-  rightDriveTrack->turnRight(input);
-  while (!(leftDriveTrack->positionReached(-input) || rightDriveTrack->positionReached(input)))  {
+  leftDriveTrack->turnLeft(input);
+  rightDriveTrack->turnRight(-input);
+  while (!(leftDriveTrack->positionReached(input) || rightDriveTrack->positionReached(-input)))  {
     pros::delay(2);
   }
 }
