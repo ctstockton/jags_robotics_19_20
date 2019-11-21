@@ -1,3 +1,7 @@
+/*-This is currently the only child of the StateController interface
+  -The defaultState is the standard state and is initialized is the
+  -constructor
+*/
 #ifndef STATES_OBEYSTATES_OBEYSTATECONTROLLER_H
 #define STATES_OBEYSTATES_OBEYSTATECONTROLLER_H
 #include "../StateController.h"
@@ -16,7 +20,5 @@ public:
 private:
   DefaultObeyState defaultState;
   ScoringObeyState scoringState;
-
-  //int targetState;
 };
 #endif

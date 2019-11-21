@@ -4,10 +4,11 @@
 SixMotorDrive::SixMotorDrive(void)
 {}
 
-SixMotorDrive::SixMotorDrive(int L1, int L2, int L3, int R1, int R2, int R3, pros::motor_gearset_e gear)
+SixMotorDrive::SixMotorDrive(int L1, int L2, int L3, int R1, int R2, int R3, pros::motor_gearset_e gear, float driveConstant)
 {
   this->leftDriveTrack = new TripleLeftTrack(L1, L2, L3, gear);
   this->rightDriveTrack = new TripleRightTrack(R1, R2, R3, gear);
+  this->driveConstant = driveConstant;
 }
 
 SixMotorDrive::~SixMotorDrive(void)

@@ -18,6 +18,5 @@ DriveBackward::~DriveBackward(void)
 
 void DriveBackward::execute(void)
 {
-  //std::cout << "drivebackward is executing!" << std::endl;
   slave->driveSystem->executeCommand(this->parameters);
 }

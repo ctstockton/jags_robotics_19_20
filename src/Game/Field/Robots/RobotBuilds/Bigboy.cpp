@@ -5,13 +5,14 @@ Bigboy::Bigboy(void):
 Robot()
 {
   this->subsystemList = new Subsystem*[5];
-  this->driveSystem = new FourMotorDrive(LEFT_MOTOR_1, LEFT_MOTOR_2, RIGHT_MOTOR_1, RIGHT_MOTOR_2, DRIVE_GEARSET);
+  int rotateConstant = ((CENTERPOINT_RADIUS*DRIVE_CONSTANT)/(360*WHEEL_RADIUS));
+  this->driveSystem = new FourMotorDrive(LEFT_MOTOR_1, LEFT_MOTOR_2, RIGHT_MOTOR_1, RIGHT_MOTOR_2, DRIVE_GEARSET, DRIVE_CONSTANT, rotateConstant);
   this->subsystemList[0] = driveSystem;
   this->liftSystem = new TwoMotorReverseDoubleForebar(LEFT_LIFT_MOTOR, RIGHT_LIFT_MOTOR, LIFT_GEARSET);
   this->subsystemList[1] = liftSystem;
   this->intakeSystem = new TwoMotorIntake(LEFT_INTAKE_MOTOR, RIGHT_INTAKE_MOTOR, INTAKE_GEARSET);
   this->subsystemList[2] = intakeSystem;
-  this->trayLiftSystem = new TrayLift(TRAY_LIFT_MOTOR, LIFT_GEARSET);
+  this->trayLiftSystem = new BigboyTrayLift(TRAY_LIFT_MOTOR, LIFT_GEARSET);
   this->subsystemList[3] = trayLiftSystem;
   this->subsystemList[4] = 0;
   obeyStateController->setSubsystemList(this->subsystemList);

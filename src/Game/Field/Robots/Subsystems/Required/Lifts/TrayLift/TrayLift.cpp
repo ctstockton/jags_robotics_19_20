@@ -19,11 +19,11 @@ TrayLift::~TrayLift(void)
 
 void TrayLift::obey(pros::Controller master)
 {
-  if((master.get_digital(DIGITAL_Y) == 1) && (trayMotor->get_position() < -400)){
-    trayMotor->move(100);
+  if((master.get_digital(DIGITAL_X) == 1)){
+    trayMotor->move_absolute(4000, 100);
   }
-  else if((master.get_digital(DIGITAL_X) == 1)/* && (trayMotor->get_position() > 100)*/){
-    trayMotor->move(-100);
+  else if((master.get_digital(DIGITAL_Y) == 1)/* && (trayMotor->get_position() > 100)*/){
+    trayMotor->move_absolute(-200, -100);
   }
   else{
     std::cout << trayMotor->get_position() << std::endl;

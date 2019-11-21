@@ -4,10 +4,12 @@
 FourMotorDrive::FourMotorDrive(void)
 {}
 
-FourMotorDrive::FourMotorDrive(int L1, int L2, int R1, int R2, pros::motor_gearset_e gear)
+FourMotorDrive::FourMotorDrive(int L1, int L2, int R1, int R2, pros::motor_gearset_e gear, int driveConstant, float turnConstant)
 {
   this->leftDriveTrack = new DoubleLeftTrack(L1, L2, gear);
   this->rightDriveTrack = new DoubleRightTrack(R1, R2, gear);
+  this->driveConstant = driveConstant;
+  this->turnConstant = turnConstant*1.5;
 }
 
 FourMotorDrive::~FourMotorDrive(void)
@@ -48,32 +50,49 @@ void FourMotorDrive::executeCommand(int * input)
 
 void FourMotorDrive::turnRight(int input)
 {
-
+  input = input*turnConstant;
+  leftDriveTrack->tarePosition();
+  rightDriveTrack->tarePosition();
+  leftDriveTrack->turnLeft(-input);
+  rightDriveTrack->turnRight(input);
+  while (!(leftDriveTrack->positionReached(-input) || rightDriveTrack->positionReached(input)))  {
+    pros::delay(2);
+  }
 }
 
 void FourMotorDrive::turnLeft(int input)
-{}
+{
+  input = input*turnConstant;
+  leftDriveTrack->tarePosition();
+  rightDriveTrack->tarePosition();
+  leftDriveTrack->turnLeft(-input);
+  rightDriveTrack->turnRight(input);
+  while (!(leftDriveTrack->positionReached(-input) || rightDriveTrack->positionReached(input)))  {
+    pros::delay(2);
+  }
+}
 
 void FourMotorDrive::driveForward(int input)
 {
+  input = input * driveConstant;
   leftDriveTrack->tarePosition();
   rightDriveTrack->tarePosition();
-  std::cout << leftDriveTrack->positionReached(input*900) << std::endl;
-  leftDriveTrack->driveForward(input * 900);
-  rightDriveTrack->driveForward(input * 900);
-  while (!(leftDriveTrack->positionReached(input*900) || rightDriveTrack->positionReached(input*900)))  {
+  leftDriveTrack->driveForward(input);
+  rightDriveTrack->driveForward(input);
+  while (!(leftDriveTrack->positionReached(input) || rightDriveTrack->positionReached(input)))  {
     pros::delay(2);
+    std::cout << leftDriveTrack->positionReached(input) << std::endl;
   }
 }
 
 void FourMotorDrive::driveBackward(int input)
 {
-  int inputR = -input;
+  int inputR = -input * driveConstant;
   leftDriveTrack->tarePosition();
   rightDriveTrack->tarePosition();
-  leftDriveTrack->driveBackward(inputR * 900);
-  rightDriveTrack->driveBackward(inputR * 900);
-  while (!(leftDriveTrack->positionReached(inputR*900) || rightDriveTrack->positionReached(inputR*900)))  {
+  leftDriveTrack->driveBackward(inputR);
+  rightDriveTrack->driveBackward(inputR);
+  while (!(leftDriveTrack->positionReached(inputR) || rightDriveTrack->positionReached(inputR)))  {
     pros::delay(2);
   }
 }
