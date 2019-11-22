@@ -90,11 +90,9 @@ void autonomous() {}
 	Robot * TRex = new class TRex();
 	Dance * routine = new Dance(TRex);
 	Raise * set = new Raise(TRex);
-	routine->driveForward(4);
-	routine->turnLeft(180);
-	routine->driveForward(4);
-	routine->turnRight(180);
-	routine->executeList();
+	//routine->driveForward(4);
+	//routine->turnRight(180);
+	//routine->executeList();
 	TRex->obey(master);
 
 //*/
