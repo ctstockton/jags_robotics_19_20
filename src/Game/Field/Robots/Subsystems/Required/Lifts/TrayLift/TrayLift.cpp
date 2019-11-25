@@ -26,7 +26,6 @@ void TrayLift::obey(pros::Controller master)
     trayMotor->move_absolute(-200, -100);
   }
   else{
-    std::cout << trayMotor->get_position() << std::endl;
     trayMotor->move(0);
   }
 }

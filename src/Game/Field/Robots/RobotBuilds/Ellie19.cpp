@@ -2,7 +2,7 @@
 
 Ellie19::Ellie19(void)
 {
-  this->driveSystem = new SixMotorDrive(LEFT_MOTOR_1, LEFT_MOTOR_2, LEFT_MOTOR_3, RIGHT_MOTOR_1, RIGHT_MOTOR_2, RIGHT_MOTOR_3, DRIVE_GEARSET);
+  this->driveSystem = new SixMotorDrive(LEFT_MOTOR_1, LEFT_MOTOR_2, LEFT_MOTOR_3, RIGHT_MOTOR_1, RIGHT_MOTOR_2, RIGHT_MOTOR_3, DRIVE_GEARSET, 7.6);
 }
 
 Ellie19::~Ellie19(void)

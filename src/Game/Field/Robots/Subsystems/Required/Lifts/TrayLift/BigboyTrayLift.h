@@ -16,5 +16,7 @@ public:
 private:
   pros::Motor * trayMotor;
   pros::Motor * trayMotorReverse;
+  bool completeLift;
+  bool scoringLift;
 };
 #endif
