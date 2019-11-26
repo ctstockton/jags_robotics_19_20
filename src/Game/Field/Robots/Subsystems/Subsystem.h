@@ -1,6 +1,7 @@
 #ifndef ROBOT_SUBSYSTEM_SUBSYSTEM_H
 #define ROBOT_SUBSYSTEM_SUBSYSTEM_H
 #include "main.h"
+#include "States/StateController.h"
 
 class Subsystem
 {
@@ -11,5 +12,8 @@ public:
   virtual void obey(pros::Controller) = 0;
   virtual void scoringObey(pros::Controller) = 0;
   virtual void executeCommand(int*) = 0;
+  void setStateController(StateController*);
+private:
+  StateController * stateController;
 };
 #endif

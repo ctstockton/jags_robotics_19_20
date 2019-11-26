@@ -15,7 +15,7 @@ public:
   virtual ~StateController(void);
 
   virtual void obey(pros::Controller) = 0;
-  virtual void setSubsystemList(Subsystem**) = 0;
+  virtual void setSubsystemList(Subsystem**);// = 0;
 protected:
   //This has currentState, which is set in the constructor of the specific
   //  stateController object
