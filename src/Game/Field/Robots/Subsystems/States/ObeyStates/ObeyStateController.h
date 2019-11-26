@@ -15,7 +15,6 @@ public:
   ~ObeyStateController(void);
 
   void obey(pros::Controller);
-  void setSubsystemList(Subsystem**);
 
 private:
   DefaultObeyState defaultState;

@@ -11,7 +11,7 @@ public:
   ~DefaultObeyState(void);
 
   //This calls the obey method on the subsystems in the Subsystem pointer array
-  void obey(pros::Controller, Subsystem**);
+  void obey(pros::Controller);
   //This method returns an int of '2' when the down button on the controller is
   //  pressed
   int changeState(pros::Controller);

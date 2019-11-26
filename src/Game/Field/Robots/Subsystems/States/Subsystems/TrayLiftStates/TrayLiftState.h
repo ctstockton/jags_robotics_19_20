@@ -5,10 +5,11 @@ class TrayLiftState : public State
 {
 public:
   TrayLiftState(void);
-  TrayLiftState(pros::Motor*);
-  virtual ~TrayLiftState(void)
+  virtual ~TrayLiftState(void);
 
-private:
+  void initialize(pros::Motor*, int);
+protected:
   pros::Motor * trayMotor;
+  int trayUpperLimit;
 };
 #endif

@@ -4,6 +4,7 @@
 #include "../SideRollingIntakeTrack.h"
 #include "SingleLeftTrack.h"
 #include "SingleRightTrack.h"
+#include "../../../../States/SubsystemStateControllers/SideRollingIntakeController.h"
 #include "main.h"
 
 class TwoMotorIntake : public SideRollingIntake
@@ -14,7 +15,6 @@ public:
   virtual ~TwoMotorIntake(void);
 
   void obey(pros::Controller);
-  void scoringObey(pros::Controller);
   void executeCommand(int*);
 private:
   SideRollingIntakeTrack * leftIntakeTrack;

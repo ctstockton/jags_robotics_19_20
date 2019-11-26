@@ -3,18 +3,11 @@
 
 TRex::TRex(void)
 {
-  subsystemList = new Subsystem*[4];
   float rotateConstant = ((CENTERPOINT_RADIUS*DRIVE_CONSTANT)/(360*WHEEL_RADIUS));
   this->driveSystem = new FourMotorDrive(LEFT_MOTOR_1, LEFT_MOTOR_2, RIGHT_MOTOR_1, RIGHT_MOTOR_2, DRIVE_GEARSET, DRIVE_CONSTANT, rotateConstant);
-  subsystemList[0] = driveSystem;
   this->liftSystem = new TwoMotorReverseDoubleForebar(LEFT_LIFT_MOTOR, RIGHT_LIFT_MOTOR, LIFT_GEARSET);
-  subsystemList[1] = liftSystem;
   this->intakeSystem = new TwoMotorIntake(LEFT_INTAKE_MOTOR, RIGHT_INTAKE_MOTOR, INTAKE_GEARSET);
-  subsystemList[2] = intakeSystem;
-  this->trayLiftSystem = new TrayLift(TRAY_LIFT_MOTOR, LIFT_GEARSET);
-  subsystemList[3] = trayLiftSystem;
-  subsystemList[4] = 0;
-  obeyStateController->setSubsystemList(subsystemList);
+  this->trayLiftSystem = new TrayLift(TRAY_LIFT_MOTOR, LIFT_GEARSET, TRAY_LIFT_MAX);
 }
 
 TRex::~TRex(void)
@@ -23,10 +16,15 @@ TRex::~TRex(void)
   delete liftSystem;
   delete intakeSystem;
   delete trayLiftSystem;
-  delete subsystemList;
 }
 
 void TRex::obey(pros::Controller master)
 {
-  obeyStateController->obey(master);
+  while(!interrupt){
+    this->driveSystem->obey(master);
+    this->liftSystem->obey(master);
+    this->intakeSystem->obey(master);
+    this->trayLiftSystem->obey(master);
+    pros::delay(2);
+  }
 }

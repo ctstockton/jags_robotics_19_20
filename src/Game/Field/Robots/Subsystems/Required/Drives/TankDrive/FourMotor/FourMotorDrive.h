@@ -4,6 +4,7 @@
 #include "../TankDrive.h"
 #include "DoubleLeftTrack.h"
 #include "DoubleRightTrack.h"
+#include "../../../../States/SubsystemStateControllers/TankDriveController.h"
 
 class FourMotorDrive : public TankDrive
 {
@@ -12,11 +13,7 @@ public:
   FourMotorDrive(int L1, int L2, int R1, int R2, pros::motor_gearset_e gear, int, float);
   virtual ~FourMotorDrive(void);
 
-  TankDriveTrack * leftDriveTrack;
-  TankDriveTrack * rightDriveTrack;
-
   void obey(pros::Controller);
-  void scoringObey(pros::Controller);
   void executeCommand(int*);
 
 private:
@@ -26,5 +23,8 @@ private:
   void driveBackward(int);
   void orbitPointRight(int);
   void orbitPointLeft(int);
+
+  TankDriveTrack * leftDriveTrack;
+  TankDriveTrack * rightDriveTrack;
 };
 #endif

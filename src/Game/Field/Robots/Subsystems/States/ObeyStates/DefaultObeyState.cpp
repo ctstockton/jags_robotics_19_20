@@ -6,13 +6,8 @@ DefaultObeyState::DefaultObeyState(void)
 DefaultObeyState::~DefaultObeyState(void)
 {}
 
-void DefaultObeyState::obey(pros::Controller master, Subsystem ** subsystemList)
+void DefaultObeyState::obey(pros::Controller master)
 {
-  int i = 0;
-  while(subsystemList[i] != 0){
-    subsystemList[i]->obey(master);
-    i++;
-  }
 }
 
 int DefaultObeyState::changeState(pros::Controller master)

@@ -8,6 +8,7 @@ FourMotorDrive::FourMotorDrive(int L1, int L2, int R1, int R2, pros::motor_gears
 {
   this->leftDriveTrack = new DoubleLeftTrack(L1, L2, gear);
   this->rightDriveTrack = new DoubleRightTrack(R1, R2, gear);
+  this->stateController = new TankDriveController(this->leftDriveTrack, this->rightDriveTrack);
   this->driveConstant = driveConstant;
   this->turnConstant = turnConstant*1.5;
 }
@@ -16,18 +17,12 @@ FourMotorDrive::~FourMotorDrive(void)
 {
   delete this->leftDriveTrack;
   delete this->rightDriveTrack;
+  delete this->stateController;
 }
 
 void FourMotorDrive::obey(pros::Controller master)
 {
-  leftDriveTrack->obey(master);
-  rightDriveTrack->obey(master);
-}
-
-void FourMotorDrive::scoringObey(pros::Controller master)
-{
-  leftDriveTrack->scoringObey(master);
-  rightDriveTrack->scoringObey(master);
+  this->stateController->obey(master);
 }
 
 void FourMotorDrive::executeCommand(int * input)

@@ -29,12 +29,6 @@ public:
 
   virtual void obey(pros::Controller) = 0;
 protected:
-  //The stateController manages the obey system by having varying states which
-  //  connect various controller button inputs to robot subsystem object
-  //  obey methods
-  StateController * obeyStateController;
-  //The subsystemList is populated in the robot object's constructor, then is
-  //  passed to the stateController
-  Subsystem ** subsystemList;
+  int interrupt;
 };
 #endif

@@ -14,7 +14,7 @@ void ObeyStateController::obey(pros::Controller master)
   this->currentState = &this->defaultState;
   bool obeyLoop = true;
   while(obeyLoop){
-    currentState->obey(master, this->subsystemList);
+    currentState->obey(master);
     targetState = this->currentState->changeState(master);
     switch(targetState){
       case 0:
@@ -28,10 +28,4 @@ void ObeyStateController::obey(pros::Controller master)
     }
     pros::delay(2);
   }
-}
-
-
-void ObeyStateController::setSubsystemList(Subsystem ** input)
-{
-  this->subsystemList = input;
 }

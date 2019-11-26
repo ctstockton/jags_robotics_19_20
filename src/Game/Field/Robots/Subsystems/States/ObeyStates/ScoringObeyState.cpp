@@ -6,13 +6,8 @@ ScoringObeyState::ScoringObeyState(void)
 ScoringObeyState::~ScoringObeyState(void)
 {}
 
-void ScoringObeyState::obey(pros::Controller master, Subsystem ** subsystemList)
+void ScoringObeyState::obey(pros::Controller master)
 {
-  int i = 0;
-  while(subsystemList[i] != 0){
-    subsystemList[i]->scoringObey(master);
-    i++;
-  }
 }
 
 int ScoringObeyState::changeState(pros::Controller master)

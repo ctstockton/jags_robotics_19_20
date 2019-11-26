@@ -32,13 +32,5 @@ void TwoMotorMonobarLift::obey(pros::Controller master)
   }
 }
 
-void TwoMotorMonobarLift::scoringObey(pros::Controller master)
-{
-  obey(master);
-}
-
-
-
-
 void TwoMotorMonobarLift::executeCommand(int * input)
 {}

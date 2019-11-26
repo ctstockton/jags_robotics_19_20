@@ -11,7 +11,6 @@ public:
   virtual ~TwoMotorMonobarLift(void);
 
   virtual void obey(pros::Controller);
-  virtual void scoringObey(pros::Controller);
   virtual void executeCommand(int*);
 private:
   pros::Motor * leftLiftUp;

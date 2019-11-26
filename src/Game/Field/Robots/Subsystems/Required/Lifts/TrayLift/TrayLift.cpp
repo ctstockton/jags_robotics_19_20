@@ -4,12 +4,11 @@
 TrayLift::TrayLift(void)
 {}
 
-TrayLift::TrayLift(int M1, pros::motor_gearset_e gear)
+TrayLift::TrayLift(int M1, pros::motor_gearset_e gear, int maxLimit)
 {
   this->trayMotor = new pros::Motor(M1, gear, true);
-  this->trayMotorReverse = new pros::Motor(M1, gear);
+  this->stateController = new TrayLiftController(trayMotor, maxLimit);
   this->trayMotor->tare_position();
-  this->trayMotorReverse->tare_position();
 }
 
 TrayLift::~TrayLift(void)
@@ -28,11 +27,6 @@ void TrayLift::obey(pros::Controller master)
   else{
     trayMotor->move(0);
   }
-}
-
-void TrayLift::scoringObey(pros::Controller master)
-{
-  obey(master);
 }
 
 void TrayLift::executeCommand(int * input)

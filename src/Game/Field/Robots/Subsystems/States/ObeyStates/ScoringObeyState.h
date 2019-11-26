@@ -8,7 +8,7 @@ public:
   ScoringObeyState(void);
   ~ScoringObeyState(void);
 
-  void obey(pros::Controller, Subsystem**);
+  void obey(pros::Controller);
   int changeState(pros::Controller);
 };
 #endif
