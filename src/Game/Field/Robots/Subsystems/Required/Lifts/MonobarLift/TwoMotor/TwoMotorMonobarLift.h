@@ -2,6 +2,7 @@
 #define MONOBARLIFT_TWOMOTOR_TWOMOTORMONOBARLIFT_H
 #include "main.h"
 #include "../MonobarLift.h"
+#include "../../../../States/SubsystemStateControllers/SpecialistStateControllers/Bigboy/BigboyMonobarLiftController.h"
 
 class TwoMotorMonobarLift : public MonobarLift
 {
