@@ -7,7 +7,7 @@ BigboyTrayLift::BigboyTrayLift(void)
 BigboyTrayLift::BigboyTrayLift(int M1, pros::motor_gearset_e gear, int maxLimit)
 {
   this->trayMotor = new pros::Motor(M1, gear, true);
-  this->stateController = new TrayLiftController(trayMotor, maxLimit);
+  this->stateController = new BigboyTrayLiftController(trayMotor, maxLimit);
   this->trayMotor->tare_position();
   completeLift = true;
   scoringLift = false;

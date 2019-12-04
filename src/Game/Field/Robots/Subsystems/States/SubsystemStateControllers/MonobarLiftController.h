@@ -9,10 +9,10 @@ class MonobarLiftController : public StateController
 public:
   MonobarLiftController(void);
   MonobarLiftController(pros::Motor*, pros::Motor*);
-  ~MonobarLiftController(void);
+  virtual ~MonobarLiftController(void);
 
-  void obey(pros::Controller);
-private:
+  virtual void obey(pros::Controller);
+protected:
   MonobarLiftDefaultObey defaultState;
   MonobarLiftBigboyCustom bigboy;
 };

@@ -10,6 +10,6 @@ public:
   void initialize(pros::Motor*, int);
 protected:
   pros::Motor * trayMotor;
-  int trayUpperLimit;
+  int position;
 };
 #endif
