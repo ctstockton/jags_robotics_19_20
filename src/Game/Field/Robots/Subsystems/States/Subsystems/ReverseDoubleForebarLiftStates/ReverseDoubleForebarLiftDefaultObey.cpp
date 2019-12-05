@@ -3,33 +3,35 @@
 ReverseDoubleForebarLiftDefaultObey::ReverseDoubleForebarLiftDefaultObey(void)
 {}
 
+ReverseDoubleForebarLiftDefaultObey::ReverseDoubleForebarLiftDefaultObey(pros::Motor* left, pros::Motor* right):
+position (0)
+{
+  this->leftMotor = left;
+  this->rightMotor = right;
+}
+
 ReverseDoubleForebarLiftDefaultObey::~ReverseDoubleForebarLiftDefaultObey(void)
 {}
 
 void ReverseDoubleForebarLiftDefaultObey::obey(pros::Controller master)
 {
-  if(master.get_digital(DIGITAL_L1) == 1)
-  {
-    this->leftMotor->move(master.get_digital(DIGITAL_L1)*-85);
-    this->leftMotor->tare_position();
-    this->rightMotor->move(master.get_digital(DIGITAL_L1)*-85);
-    this->rightMotor->tare_position();
-  }
-  else if(master.get_digital(DIGITAL_L2) == 1)
-  {
-    this->leftMotor->move(master.get_digital(DIGITAL_L2)*75);
-    this->leftMotor->tare_position();
-    this->rightMotor->move(master.get_digital(DIGITAL_L2)*75);
-    this->rightMotor->tare_position();
-  }
-  else
-  {
-    this->leftMotor->move_absolute(0, 100);
-    this->rightMotor->move_absolute(0, 100);
+  if((position < -600) || (position > 600)){
+    this->leftMotor->move_absolute(position, 100);
+    this->rightMotor->move_absolute(position, 100);
   }
 }
 
-int ReverseDoubleForebarLiftDefaultObey::changeState(pros::Controller)
+int ReverseDoubleForebarLiftDefaultObey::changeState(pros::Controller master)
 {
-  return 0;
+  return position;
+}
+
+void ReverseDoubleForebarLiftDefaultObey::setPosition(int input)
+{
+  position = input;
+}
+
+int ReverseDoubleForebarLiftDefaultObey::getPosition(void)
+{
+  return position;
 }

@@ -9,7 +9,7 @@ firstPosition (7500),
 secondPosition (2500),
 basicSet (true),
 positionZero (new TrayLiftPositionZero(motor, 0, 100)),
-positionOne (new TrayLiftPositionOne(motor, 7500, 100))
+positionOne (new TrayLiftPositionOne(motor, 6000, 100))
 {
   this->testing.initialize(motor, upper);
   this->currentState = &this->testing;
