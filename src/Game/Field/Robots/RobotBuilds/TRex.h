@@ -21,6 +21,8 @@
 #define LEFT_INTAKE_MOTOR 19
 #define RIGHT_INTAKE_MOTOR 17
 #define INTAKE_GEARSET pros::E_MOTOR_GEARSET_36
+#define INTAKE_SPEED 127
+#define OUTTAKE_SPEED -80
 
 #include "../Robot.h"
 #include "main.h"

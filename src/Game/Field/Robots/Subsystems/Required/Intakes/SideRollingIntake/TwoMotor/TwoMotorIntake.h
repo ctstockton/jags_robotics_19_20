@@ -12,6 +12,7 @@ class TwoMotorIntake : public SideRollingIntake
 public:
   TwoMotorIntake(void);
   TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear);
+  TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear, int in, int out);
   virtual ~TwoMotorIntake(void);
 
   void obey(pros::Controller);

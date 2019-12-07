@@ -11,6 +11,13 @@ TwoMotorIntake::TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear)
   this->stateController = new SideRollingIntakeController(this->leftIntakeTrack, this->rightIntakeTrack);
 }
 
+TwoMotorIntake::TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear, int in, int out)
+{
+  this->leftIntakeTrack = new SingleLeftIntakeTrack(L1, gear, in, out);
+  this->rightIntakeTrack = new SingleRightIntakeTrack(R1, gear, in, out);
+  this->stateController = new SideRollingIntakeController(this->leftIntakeTrack, this->rightIntakeTrack);
+}
+
 TwoMotorIntake::~TwoMotorIntake(void)
 {
   delete this->leftIntakeTrack;
