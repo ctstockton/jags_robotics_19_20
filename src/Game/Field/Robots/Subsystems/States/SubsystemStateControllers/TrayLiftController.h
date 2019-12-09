@@ -8,11 +8,11 @@ class TrayLiftController : public StateController
 {
 public:
   TrayLiftController(void);
-  TrayLiftController(pros::Motor*, int);
+  TrayLiftController(pros::Motor*, int, pros::controller_digital_e_t, pros::controller_digital_e_t, pros::controller_digital_e_t, pros::controller_digital_e_t);
   virtual ~TrayLiftController(void);
 
   virtual void obey(pros::Controller);
 protected:
-  TrayLiftTesting testing;
+  TrayLiftState * testing;
 };
 #endif

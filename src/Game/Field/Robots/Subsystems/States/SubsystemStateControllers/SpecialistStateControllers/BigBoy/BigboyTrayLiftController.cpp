@@ -3,20 +3,25 @@
 BigboyTrayLiftController::BigboyTrayLiftController(void)
 {}
 
-BigboyTrayLiftController::BigboyTrayLiftController(pros::Motor* motor, int upper):
+BigboyTrayLiftController::BigboyTrayLiftController(pros::Motor* motor, int upper, pros::controller_digital_e_t raise, pros::controller_digital_e_t lower, pros::controller_digital_e_t util1, pros::controller_digital_e_t util2):
 upperLimit (upper),
 firstPosition (7500),
 secondPosition (2500),
 basicSet (true),
 positionZero (new TrayLiftPositionZero(motor, 0, 100)),
-positionOne (new TrayLiftPositionOne(motor, 6000, 100))
+positionOne (new TrayLiftPositionOne(motor, 6000, 100)),
+stall (new TrayLiftStall(util2))
 {
-  this->testing.initialize(motor, upper);
-  this->currentState = &this->testing;
+  this->testing = new TrayLiftTesting(motor, upper, raise, lower, util1);
+  this->currentState = this->testing;
 }
 
 BigboyTrayLiftController::~BigboyTrayLiftController(void)
-{}
+{
+  delete positionZero;
+  delete positionOne;
+  delete stall;
+}
 
 void BigboyTrayLiftController::obey(pros::Controller master)
 {
@@ -29,7 +34,7 @@ void BigboyTrayLiftController::obey(pros::Controller master)
         break;
       case 1: this->currentState = positionOne;
         break;
-      case 2: this->currentState = &stall;
+      case 2: this->currentState = stall;
         basicSet = false;
         break;
       default:
@@ -40,7 +45,7 @@ void BigboyTrayLiftController::obey(pros::Controller master)
     switch(this->targetState){
       case 9: this->currentState = positionZero;
         break;
-      case 0: this->currentState = &this->testing;
+      case 0: this->currentState = this->testing;
         basicSet = true;
         break;
       default:

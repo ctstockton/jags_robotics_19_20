@@ -9,7 +9,7 @@ class BigboyTrayLiftController : public TrayLiftController
 {
 public:
   BigboyTrayLiftController(void);
-  BigboyTrayLiftController(pros::Motor*, int);
+  BigboyTrayLiftController(pros::Motor*, int, pros::controller_digital_e_t, pros::controller_digital_e_t, pros::controller_digital_e_t, pros::controller_digital_e_t);
   ~BigboyTrayLiftController(void);
 
   void obey(pros::Controller);
@@ -22,6 +22,6 @@ private:
   TrayLiftState * positionZero;
   TrayLiftState * positionOne;
   TrayLiftState * positionTwo;
-  TrayLiftStall stall;
+  TrayLiftStall * stall;
 };
 #endif

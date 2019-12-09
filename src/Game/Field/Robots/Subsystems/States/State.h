@@ -1,6 +1,7 @@
 #ifndef SUBSYSTEMS_STATES_STATE_H
 #define SUBSYSTEMS_STATES_STATE_H
 #include "main.h"
+#include <cstring>
 class State
 {
 public:

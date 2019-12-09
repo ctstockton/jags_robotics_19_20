@@ -3,10 +3,13 @@
 TrayLiftTesting::TrayLiftTesting(void)
 {}
 
-TrayLiftTesting::TrayLiftTesting(pros::Motor * motor, int limit)
+TrayLiftTesting::TrayLiftTesting(pros::Motor * motor, int input, pros::controller_digital_e_t raiseString, pros::controller_digital_e_t lowerString, pros::controller_digital_e_t util1String):
+raise (raiseString),
+lower (lowerString),
+util1 (util1String)
 {
   this->trayMotor = motor;
-  this->position = limit;
+  this->position = input;
 }
 
 TrayLiftTesting::~TrayLiftTesting(void)
@@ -14,10 +17,10 @@ TrayLiftTesting::~TrayLiftTesting(void)
 
 void TrayLiftTesting::obey(pros::Controller master)
 {
-  if(master.get_digital(DIGITAL_X) == 1){
+  if(master.get_digital(raise) == 1){
     trayMotor->move_absolute(1*(this->position), 100);
   }
-  else if(master.get_digital(DIGITAL_Y) == 1){
+  else if(master.get_digital(lower) == 1){
     trayMotor->move_absolute(0, -100);
   }
   else{
@@ -28,7 +31,7 @@ void TrayLiftTesting::obey(pros::Controller master)
 
 int TrayLiftTesting::changeState(pros::Controller master)
 {
-  if(master.get_digital(DIGITAL_L1) == 1){
+  if(master.get_digital(util1) == 1){
     return 1;
   }
   else{
