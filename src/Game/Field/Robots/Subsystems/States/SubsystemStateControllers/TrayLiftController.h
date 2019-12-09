@@ -1,7 +1,7 @@
 #ifndef STATES_SUBSYSTEMSTATECONTROLLERS_TRAYLIFTCONTROLLER_H
 #define STATES_SUBSYSTEMSTATECONTROLLERS_TRAYLIFTCONTROLLER_H
 #include "../StateController.h"
-#include "../Subsystems/TrayLiftStates/TrayLiftTesting.h"
+#include "../Subsystems/TrayLiftStates/TrayLiftDefaultObey.h"
 #include "../Subsystems/TrayLiftStates/TrayLiftTargetPosition.h"
 #include "main.h"
 class TrayLiftController : public StateController
@@ -13,6 +13,6 @@ public:
 
   virtual void obey(pros::Controller);
 protected:
-  TrayLiftState * testing;
+  TrayLiftState * defaultState;
 };
 #endif

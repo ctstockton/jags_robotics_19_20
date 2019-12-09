@@ -16,7 +16,6 @@ TrayLiftPositionZero::~TrayLiftPositionZero(void)
 void TrayLiftPositionZero::obey(pros::Controller master)
 {
   this->trayMotor->move_absolute(position, speed);
-  std::cout << "Position zero\n";
 }
 
 int TrayLiftPositionZero::changeState(pros::Controller master)

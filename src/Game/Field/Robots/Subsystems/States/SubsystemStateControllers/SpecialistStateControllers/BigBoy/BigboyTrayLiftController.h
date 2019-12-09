@@ -1,9 +1,8 @@
 #ifndef SPECIALISTSTATECONTROLLERS_BIGBOY_BIGBOYTRAYLIFT_H
 #define SPECIALISTSTATECONTROLLERS_BIGBOY_BIGBOYTRAYLIFT_H
 #include "../../TrayLiftController.h"
-#include "../../../Subsystems/TrayLiftStates/TrayLiftPositionStates/TrayLiftPositionZero.h"
-#include "../../../Subsystems/TrayLiftStates/TrayLiftPositionStates/TrayLiftPositionOne.h"
-#include "../../../Subsystems/TrayLiftStates/TrayLiftPositionStates/TrayLiftPositionTwo.h"
+#include "../../../Subsystems/TrayLiftStates/TrayLiftMoveThenReturn.h"
+#include "../../../Subsystems/TrayLiftStates/TrayLiftUnrestrictedObey.h"
 #include "../../../Subsystems/TrayLiftStates/TrayLiftStall.h"
 class BigboyTrayLiftController : public TrayLiftController
 {
@@ -14,14 +13,9 @@ public:
 
   void obey(pros::Controller);
 private:
-  int upperLimit;
-  int firstPosition;
-  int secondPosition;
-  bool basicSet;
-
-  TrayLiftState * positionZero;
-  TrayLiftState * positionOne;
-  TrayLiftState * positionTwo;
+  TrayLiftMoveThenReturn * positionZero;
+  TrayLiftMoveThenReturn * positionOne;
+  TrayLiftUnrestrictedObey * unrestricted;
   TrayLiftStall * stall;
 };
 #endif
