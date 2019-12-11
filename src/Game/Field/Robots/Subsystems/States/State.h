@@ -1,6 +1,7 @@
 #ifndef SUBSYSTEMS_STATES_STATE_H
 #define SUBSYSTEMS_STATES_STATE_H
 #include "main.h"
+#include <cstring>
 class State
 {
 public:
@@ -16,5 +17,7 @@ public:
   //  change to. The method returns an int which corresponds to the
   //  target state
   virtual int changeState(pros::Controller) = 0;
+protected:
+  int returnValue;
 };
 #endif

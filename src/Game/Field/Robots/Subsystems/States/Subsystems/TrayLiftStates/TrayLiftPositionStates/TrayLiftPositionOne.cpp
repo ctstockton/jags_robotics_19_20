@@ -16,8 +16,6 @@ TrayLiftPositionOne::~TrayLiftPositionOne(void)
 void TrayLiftPositionOne::obey(pros::Controller master)
 {
   this->trayMotor->move_absolute(position, speed);
-  std::cout << "Position one\n";
-  std::cout << this->trayMotor->get_position() << std::endl;
 }
 
 int TrayLiftPositionOne::changeState(pros::Controller master)

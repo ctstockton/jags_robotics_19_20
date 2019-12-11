@@ -1,6 +1,7 @@
 #ifndef ROBOT_SUBSYSTEM_SUBSYSTEM_H
 #define ROBOT_SUBSYSTEM_SUBSYSTEM_H
 #include "main.h"
+#include <cstring>
 #include "States/StateController.h"
 
 class Subsystem

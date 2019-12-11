@@ -4,10 +4,10 @@
 TrayLift::TrayLift(void)
 {}
 
-TrayLift::TrayLift(int M1, pros::motor_gearset_e gear, int maxLimit)
+TrayLift::TrayLift(int M1, pros::motor_gearset_e gear, int maxLimit, pros::controller_digital_e_t raise, pros::controller_digital_e_t lower, pros::controller_digital_e_t util1, pros::controller_digital_e_t util2)
 {
   this->trayMotor = new pros::Motor(M1, gear, true);
-  this->stateController = new TrayLiftController(trayMotor, maxLimit);
+  this->stateController = new TrayLiftController(trayMotor, maxLimit, raise, lower, util1, util2);
   this->trayMotor->tare_position();
 }
 

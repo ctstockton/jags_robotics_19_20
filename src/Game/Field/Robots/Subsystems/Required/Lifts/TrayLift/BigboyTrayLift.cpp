@@ -4,10 +4,10 @@
 BigboyTrayLift::BigboyTrayLift(void)
 {}
 
-BigboyTrayLift::BigboyTrayLift(int M1, pros::motor_gearset_e gear, int maxLimit)
+BigboyTrayLift::BigboyTrayLift(int M1, pros::motor_gearset_e gear, int maxLimit, pros::controller_digital_e_t raise, pros::controller_digital_e_t lower, pros::controller_digital_e_t util1, pros::controller_digital_e_t util2)
 {
   this->trayMotor = new pros::Motor(M1, gear, true);
-  this->stateController = new BigboyTrayLiftController(trayMotor, maxLimit);
+  this->stateController = new BigboyTrayLiftController(trayMotor, maxLimit, raise, lower, util1, util2);
   this->trayMotor->tare_position();
   completeLift = true;
   scoringLift = false;
