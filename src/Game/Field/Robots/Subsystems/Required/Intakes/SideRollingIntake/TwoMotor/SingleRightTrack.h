@@ -8,6 +8,7 @@ class SingleRightIntakeTrack : public RightIntakeTrack
 public:
   SingleRightIntakeTrack(void);
   SingleRightIntakeTrack(int R1, pros::motor_gearset_e gear);
+  SingleRightIntakeTrack(int R1, pros::motor_gearset_e gear, int in, int out);
   ~SingleRightIntakeTrack(void);
 
   void obey(pros::Controller);
@@ -15,5 +16,7 @@ public:
 
 private:
   pros::Motor * rightIntakeMotor;
+  int in;
+  int out;
 };
 #endif
