@@ -34,7 +34,7 @@
 #include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/TwoMotor/TwoMotorIntake.h"
 #include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/TwoMotor/SingleLeftTrack.h"
 #include "../../Robots/Subsystems/Required/Intakes/SideRollingIntake/TwoMotor/SingleRightTrack.h"
-#include "../../Robots/Subsystems/Required/Lifts/TrayLift/BigboyTrayLift.h"
+#include "../../Robots/Subsystems/Required/Lifts/TrayLift/TrayLift.h"
 #include "../../Robots/Subsystems/Required/Lifts/Lift.h"
 
 class Bigboy : public Robot
@@ -46,5 +46,7 @@ public:
   void obey(pros::Controller);
 
   Lift * trayLiftSystem;
+private:
+  std::string trayLiftString;
 };
 #endif

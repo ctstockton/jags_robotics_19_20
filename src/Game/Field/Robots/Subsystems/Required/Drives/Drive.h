@@ -16,13 +16,6 @@ public:
   Drive(void);
   virtual ~Drive(void);
 
-  //This method is the structure for the command system to interface with
-  // the drive subsystem. The first element of the int pointer designates
-  //  which helper method to call and feed it the correct number of
-  // parameters, which are pulled from the subsequent addresses after the
-  // provided int pointer
-  virtual void executeCommand(int*) = 0;
-
 protected:
   //When the helper method is called by the executeCommand method, using
   // the int parameter supplied by the executeCommand method

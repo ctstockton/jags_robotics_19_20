@@ -13,9 +13,7 @@ TrayLiftStall::~TrayLiftStall(void)
 {}
 
 void TrayLiftStall::obey(pros::Controller master)
-{
-  std::cout << "Position stall\n";
-}
+{}
 
 int TrayLiftStall::changeState(pros::Controller master)
 {

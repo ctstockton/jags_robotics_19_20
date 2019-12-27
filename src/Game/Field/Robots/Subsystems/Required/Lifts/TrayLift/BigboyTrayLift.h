@@ -1,7 +1,7 @@
 #ifndef LIFT_TRAYLIFT_BIGBOYTRAYLIFT_H
 #define LIFT_TRAYLIFT_BIGBOYTRAYLIFT_H
 #include "../Lift.h"
-#include "../../../States/SubsystemStateControllers/SpecialistStateControllers/BigBoy/BigboyTrayLiftController.h"
+#include "../../../States/SubsystemStateControllers/TrayLiftControllers/UnrestrictToggleFourStateMidStallTrayLiftController.h"
 #include "main.h"
 
 class BigboyTrayLift : public Lift

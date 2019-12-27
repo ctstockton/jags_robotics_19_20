@@ -1,18 +1,15 @@
 #ifndef STATES_SUBSYSTEMSTATECONTROLLERS_TRAYLIFTCONTROLLER_H
 #define STATES_SUBSYSTEMSTATECONTROLLERS_TRAYLIFTCONTROLLER_H
-#include "../StateController.h"
+#include "AbstractControllers/LiftController.h"
 #include "../Subsystems/TrayLiftStates/TrayLiftDefaultObey.h"
-#include "../Subsystems/TrayLiftStates/TrayLiftTargetPosition.h"
 #include "main.h"
-class TrayLiftController : public StateController
+class TrayLiftController : public LiftController
 {
 public:
   TrayLiftController(void);
-  TrayLiftController(pros::Motor*, int, pros::controller_digital_e_t, pros::controller_digital_e_t, pros::controller_digital_e_t, pros::controller_digital_e_t);
   virtual ~TrayLiftController(void);
-
-  virtual void obey(pros::Controller);
 protected:
-  TrayLiftState * defaultState;
+    TrayLiftState * defaultState;
+    pros::Motor * trayMotor;
 };
 #endif

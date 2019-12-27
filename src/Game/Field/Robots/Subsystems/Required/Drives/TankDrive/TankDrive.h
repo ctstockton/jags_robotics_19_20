@@ -10,5 +10,8 @@ class TankDrive : public Drive
 public:
   TankDrive(void);
   virtual ~TankDrive(void);
+protected:
+  TankDriveTrack * leftDriveTrack;
+  TankDriveTrack * rightDriveTrack;
 };
 #endif

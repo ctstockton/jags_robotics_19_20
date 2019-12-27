@@ -1,10 +1,9 @@
 #ifndef SPECIALISTSTATECONTROLLERS_BIGBOY_BIGBOYTRAYLIFT_H
 #define SPECIALISTSTATECONTROLLERS_BIGBOY_BIGBOYTRAYLIFT_H
-#include "../../TrayLiftController.h"
 #include "../../../Subsystems/TrayLiftStates/TrayLiftMoveThenReturn.h"
 #include "../../../Subsystems/TrayLiftStates/TrayLiftUnrestrictedObey.h"
 #include "../../../Subsystems/TrayLiftStates/TrayLiftStall.h"
-class BigboyTrayLiftController : public TrayLiftController
+class BigboyTrayLiftController
 {
 public:
   BigboyTrayLiftController(void);

@@ -13,6 +13,7 @@
 #include "Subsystems/Required/Lifts/Lift.h"
 #include "Subsystems/States/StateController.h"
 #include "Subsystems/States/ObeyStates/ObeyStateController.h"
+#include <string>
 
 class Robot
 {

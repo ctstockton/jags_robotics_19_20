@@ -43,5 +43,7 @@ public:
   void obey(pros::Controller);
 
   Subsystem * trayLiftSystem;
+private:
+  std::string trayLiftString;
 };
 #endif

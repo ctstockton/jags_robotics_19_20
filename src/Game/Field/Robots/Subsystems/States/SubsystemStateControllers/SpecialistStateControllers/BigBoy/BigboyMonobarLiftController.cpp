@@ -5,7 +5,6 @@ BigboyMonobarLiftController::BigboyMonobarLiftController(void)
 
 BigboyMonobarLiftController::BigboyMonobarLiftController(pros::Motor* left, pros::Motor* right)
 {
-  this->defaultState.setMotors(left, right);
   this->currentState = &bigboy;
 }
 

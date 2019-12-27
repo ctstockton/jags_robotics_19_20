@@ -23,8 +23,5 @@ private:
   void driveBackward(int);
   void orbitPointRight(int);
   void orbitPointLeft(int);
-
-  TankDriveTrack * leftDriveTrack;
-  TankDriveTrack * rightDriveTrack;
 };
 #endif
