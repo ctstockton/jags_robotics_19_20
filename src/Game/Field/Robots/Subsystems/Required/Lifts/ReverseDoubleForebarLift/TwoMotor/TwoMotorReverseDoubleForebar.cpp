@@ -4,11 +4,14 @@
 TwoMotorReverseDoubleForebar::TwoMotorReverseDoubleForebar(void)
 {}
 
-TwoMotorReverseDoubleForebar::TwoMotorReverseDoubleForebar(int L1, int R1, pros::motor_gearset_e gear)
+TwoMotorReverseDoubleForebar::TwoMotorReverseDoubleForebar(std::string string, RobotDetails* details)
 {
-  this->leftLiftUp = new pros::Motor(L1, gear);
-  this->rightLiftUp = new pros::Motor(R1, gear, true);
-  this->stateController = new ReverseDoubleForebarController(leftLiftUp, rightLiftUp);
+  this->leftLiftUp = new pros::Motor(details->getLeftLiftMotor1(), details->getLiftGearset());
+  this->rightLiftUp = new pros::Motor(details->getRightLiftMotor1(), details->getLiftGearset(), true);
+  this->factory = new ReverseDoubleForebarLiftStateControllerFactory(string, this->leftLiftUp, this->rightLiftUp, details);
+  this->stateController = this->factory->getController();
+  this->leftLiftUp->tare_position();
+  this->rightLiftUp->tare_position();
 }
 
 TwoMotorReverseDoubleForebar::~TwoMotorReverseDoubleForebar(void)

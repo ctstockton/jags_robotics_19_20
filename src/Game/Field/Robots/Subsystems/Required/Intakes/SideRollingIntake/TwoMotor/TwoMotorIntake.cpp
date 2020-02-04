@@ -4,18 +4,12 @@
 TwoMotorIntake::TwoMotorIntake(void)
 {}
 
-TwoMotorIntake::TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear)
+TwoMotorIntake::TwoMotorIntake(std::string string, RobotDetails * details)
 {
-  this->leftIntakeTrack = new SingleLeftIntakeTrack(L1, gear);
-  this->rightIntakeTrack = new SingleRightIntakeTrack(R1, gear);
-  this->stateController = new SideRollingIntakeController(this->leftIntakeTrack, this->rightIntakeTrack);
-}
-
-TwoMotorIntake::TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear, int in, int out)
-{
-  this->leftIntakeTrack = new SingleLeftIntakeTrack(L1, gear, in, out);
-  this->rightIntakeTrack = new SingleRightIntakeTrack(R1, gear, in, out);
-  this->stateController = new SideRollingIntakeController(this->leftIntakeTrack, this->rightIntakeTrack);
+  this->leftIntakeTrack = new SingleLeftIntakeTrack(details->getLeftIntakeMotor1(), details->getIntakeGearset(), details->getIntakeSpeed(), details->getOuttakeSpeed());
+  this->rightIntakeTrack = new SingleRightIntakeTrack(details->getRightIntakeMotor1(), details->getIntakeGearset(), details->getIntakeSpeed(), details->getOuttakeSpeed());
+  factory = new SideRollingIntakeFactory(string, this->leftIntakeTrack, this->rightIntakeTrack, details);
+  this->stateController = factory->getController();
 }
 
 TwoMotorIntake::~TwoMotorIntake(void)

@@ -4,10 +4,10 @@
 TwoMotorMonobarLift::TwoMotorMonobarLift(void)
 {}
 
-TwoMotorMonobarLift::TwoMotorMonobarLift(int L1, int R1, pros::motor_gearset_e gear)
+TwoMotorMonobarLift::TwoMotorMonobarLift(RobotDetails* details)
 {
-  this->leftLiftUp = new pros::Motor(L1, gear);
-  this->rightLiftUp = new pros::Motor(R1, gear, true);
+  this->leftLiftUp = new pros::Motor(details->getLeftDriveMotor1(), details->getDriveGearset());
+  this->rightLiftUp = new pros::Motor(details->getRightDriveMotor1(), details->getDriveGearset(), true);
   this->stateController = new BigboyMonobarLiftController(this->leftLiftUp, this->rightLiftUp);
   this->leftLiftUp->tare_position();
   this->rightLiftUp->tare_position();

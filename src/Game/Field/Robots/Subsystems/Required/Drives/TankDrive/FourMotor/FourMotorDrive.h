@@ -10,7 +10,7 @@ class FourMotorDrive : public TankDrive
 {
 public:
   FourMotorDrive(void);
-  FourMotorDrive(int L1, int L2, int R1, int R2, pros::motor_gearset_e gear, int, float);
+  FourMotorDrive(RobotDetails*);
   virtual ~FourMotorDrive(void);
 
   void obey(pros::Controller);

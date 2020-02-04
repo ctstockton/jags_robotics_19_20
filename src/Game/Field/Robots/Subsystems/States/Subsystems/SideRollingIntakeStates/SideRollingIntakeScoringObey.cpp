@@ -4,6 +4,14 @@
 SideRollingIntakeScoringObey::SideRollingIntakeScoringObey(void)
 {}
 
+SideRollingIntakeScoringObey::SideRollingIntakeScoringObey(SideRollingIntakeTrack* leftTrack, SideRollingIntakeTrack* rightTrack, pros::controller_digital_e_t changeCommandInput, int changeCommandInput2)
+{
+  this->leftIntakeTrack = leftTrack;
+  this->rightIntakeTrack = rightTrack;
+  this->changeStateCommand = changeCommandInput;
+  this->returnValue = changeCommandInput2;
+}
+
 SideRollingIntakeScoringObey::~SideRollingIntakeScoringObey(void)
 {}
 
@@ -15,8 +23,8 @@ void SideRollingIntakeScoringObey::obey(pros::Controller master)
 
 int SideRollingIntakeScoringObey::changeState(pros::Controller master)
 {
-  if(master.get_digital(DIGITAL_UP)){
-    return 1;
+  if(master.get_digital(this->changeStateCommand)){
+    return this->returnValue;
   }
   else{
     return 0;

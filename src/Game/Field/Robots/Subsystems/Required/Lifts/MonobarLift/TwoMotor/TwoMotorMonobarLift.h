@@ -8,7 +8,7 @@ class TwoMotorMonobarLift : public MonobarLift
 {
 public:
   TwoMotorMonobarLift(void);
-  TwoMotorMonobarLift(int L1, int R1, pros::motor_gearset_e gear);
+  TwoMotorMonobarLift(RobotDetails*);
   virtual ~TwoMotorMonobarLift(void);
 
   virtual void obey(pros::Controller);

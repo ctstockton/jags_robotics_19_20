@@ -1,6 +1,7 @@
 #ifndef SUBSYSTEMS_STATES_STATE_H
 #define SUBSYSTEMS_STATES_STATE_H
 #include "main.h"
+#include "../../RobotDetails/RobotDetails.h"
 #include <cstring>
 class State
 {
@@ -19,5 +20,6 @@ public:
   virtual int changeState(pros::Controller) = 0;
 protected:
   int returnValue;
+  pros::controller_digital_e_t changeStateCommand;
 };
 #endif

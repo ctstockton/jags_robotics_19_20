@@ -25,6 +25,13 @@ void TripleLeftTrack::obey(pros::Controller master)
   leftMotor3->move(master.get_analog(ANALOG_LEFT_Y));
 }
 
+void TripleLeftTrack::scoringObey(pros::Controller master)
+{
+  leftMotor1->move(master.get_analog(ANALOG_RIGHT_Y));
+  leftMotor2->move(master.get_analog(ANALOG_RIGHT_Y));
+  leftMotor3->move(master.get_analog(ANALOG_RIGHT_Y));
+}
+
 void TripleLeftTrack::turnRight(int)
 {
 //  leftTrack->turnRight();
@@ -50,7 +57,12 @@ void TripleLeftTrack::orbitPointLeft(int)
 {}
 
 void TripleLeftTrack::tarePosition(void)
-{}
+{
+  leftMotor1->tare_position();
+  leftMotor2->tare_position();
+  leftMotor3->tare_position();
+
+}
 
 bool TripleLeftTrack::positionReached(int)
 {

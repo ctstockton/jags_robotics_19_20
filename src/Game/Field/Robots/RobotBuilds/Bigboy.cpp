@@ -1,15 +1,13 @@
 #include "main.h"
 #include "Bigboy.h"
 
-Bigboy::Bigboy(void):
-Robot(),
-trayLiftString ("unrestrictToggleFourStateMidStallTrayLiftController")
+Bigboy::Bigboy(void)
 {
-  int rotateConstant = ((CENTERPOINT_RADIUS*DRIVE_CONSTANT)/(360*WHEEL_RADIUS));
-  this->driveSystem = new FourMotorDrive(LEFT_MOTOR_1, LEFT_MOTOR_2, RIGHT_MOTOR_1, RIGHT_MOTOR_2, DRIVE_GEARSET, DRIVE_CONSTANT, rotateConstant);
-  this->liftSystem = new TwoMotorMonobarLift(LEFT_LIFT_MOTOR, RIGHT_LIFT_MOTOR, LIFT_GEARSET);
-  this->intakeSystem = new TwoMotorIntake(LEFT_INTAKE_MOTOR, RIGHT_INTAKE_MOTOR, INTAKE_GEARSET);
-  this->trayLiftSystem = new TrayLift(trayLiftString, TRAY_LIFT_MOTOR, LIFT_GEARSET, TRAY_LIFT_MAX, DIGITAL_L1, DIGITAL_L2, DIGITAL_X, DIGITAL_Y);
+  this->details = new BigboyDetails();
+  this->driveSystem = new SevenMotorHDrive(details);
+  this->liftSystem = new TwoMotorMonobarLift(details);
+  this->intakeSystem = new TwoMotorIntake("scoringAssistTwoMotorSideRollingIntakeController", details);
+  this->trayLiftSystem = new TrayLift("unrestrictToggleFourStateMidStallTrayLiftController", details);
 }
 
 Bigboy::~Bigboy(void)

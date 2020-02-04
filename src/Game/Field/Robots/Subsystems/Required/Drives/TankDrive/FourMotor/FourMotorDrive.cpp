@@ -4,13 +4,14 @@
 FourMotorDrive::FourMotorDrive(void)
 {}
 
-FourMotorDrive::FourMotorDrive(int L1, int L2, int R1, int R2, pros::motor_gearset_e gear, int driveConstant, float turnConstant)
+FourMotorDrive::FourMotorDrive(RobotDetails * details)
 {
-  this->leftDriveTrack = new DoubleLeftTrack(L1, L2, gear);
-  this->rightDriveTrack = new DoubleRightTrack(R1, R2, gear);
+  this->leftDriveTrack = new DoubleLeftTrack(details->getLeftDriveMotor1(), details->getLeftDriveMotor2(), details->getDriveGearset());
+  this->rightDriveTrack = new DoubleRightTrack(details->getRightDriveMotor1(), details->getRightDriveMotor2(), details->getDriveGearset());
   this->stateController = new TankDriveController(this->leftDriveTrack, this->rightDriveTrack);
-  this->driveConstant = driveConstant;
-  this->turnConstant = turnConstant*1.5;
+  this->driveConstant = details->getDriveConstant();
+  this->turnConstant = details->getTurnConstant()*1.5;
+  std::cout << "test2" << std::endl;
 }
 
 FourMotorDrive::~FourMotorDrive(void)

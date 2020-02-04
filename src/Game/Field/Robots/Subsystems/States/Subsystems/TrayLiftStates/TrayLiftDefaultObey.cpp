@@ -20,10 +20,10 @@ TrayLiftDefaultObey::~TrayLiftDefaultObey(void)
 void TrayLiftDefaultObey::obey(pros::Controller master)
 {
   if(master.get_digital(raise) == 1){
-    trayMotor->move_absolute(1*(this->position), 100);
+    trayMotor->move_absolute(1*(this->position), 127);
   }
   else if(master.get_digital(lower) == 1){
-    trayMotor->move_absolute(0, -100);
+    trayMotor->move_absolute(0, -127);
   }
   else{
     trayMotor->move(0);

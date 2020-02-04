@@ -1,31 +1,28 @@
 #include "main.h"
 #include "TRex.h"
 
-TRex::TRex(void):
-trayLiftString ("unrestrictToggleTrayLiftController")
+TRex::TRex(void)
 {
-  float rotateConstant = ((CENTERPOINT_RADIUS*DRIVE_CONSTANT)/(360*WHEEL_RADIUS));
-  this->driveSystem = new FourMotorDrive(LEFT_MOTOR_1, LEFT_MOTOR_2, RIGHT_MOTOR_1, RIGHT_MOTOR_2, DRIVE_GEARSET, DRIVE_CONSTANT, rotateConstant);
-  this->liftSystem = new TwoMotorReverseDoubleForebar(LEFT_LIFT_MOTOR, RIGHT_LIFT_MOTOR, LIFT_GEARSET);
-  this->intakeSystem = new TwoMotorIntake(LEFT_INTAKE_MOTOR, RIGHT_INTAKE_MOTOR, INTAKE_GEARSET, INTAKE_SPEED, OUTTAKE_SPEED);
-  this->trayLiftSystem = new TrayLift(trayLiftString, TRAY_LIFT_MOTOR, LIFT_GEARSET, TRAY_LIFT_MAX, DIGITAL_X, DIGITAL_Y, DIGITAL_L1, DIGITAL_L2);
+  this->details = new TRexDetails();
+  this->driveSystem = new FourMotorDrive(details);
+  this->liftSystem = new TwoMotorReverseDoubleForebar("manualControlLowerPointRelaxReverseDoubleForebarLiftStateController", details);
+  this->intakeSystem = new TwoMotorIntake("scoringAssistTwoMotorSideRollingIntakeController", details);
 }
 
 TRex::~TRex(void)
 {
+  delete details;
   delete driveSystem;
   delete liftSystem;
   delete intakeSystem;
-  delete trayLiftSystem;
 }
 
 void TRex::obey(pros::Controller master)
 {
-  while(!interrupt){
+  while(1){
     this->driveSystem->obey(master);
     this->liftSystem->obey(master);
     this->intakeSystem->obey(master);
-    this->trayLiftSystem->obey(master);
     pros::delay(2);
   }
 }

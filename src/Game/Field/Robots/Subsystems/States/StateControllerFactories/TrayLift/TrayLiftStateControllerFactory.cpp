@@ -9,15 +9,14 @@ wrapper (0)
   It maps the string provided to it and it calls the function which
   calls the constructor of the specified TrayLiftStateController.
 */
-TrayLiftStateControllerFactory::TrayLiftStateControllerFactory(std::string string, pros::Motor* trayMotor, int maxLimit, pros::controller_digital_e_t raise, pros::controller_digital_e_t lower, pros::controller_digital_e_t util1, pros::controller_digital_e_t util2)
+TrayLiftStateControllerFactory::TrayLiftStateControllerFactory(std::string string, pros::Motor* trayMotor, RobotDetails* details)
 {
   unrestrictToggleFourStateMidStallTrayLiftControllerWrapper = new UnrestrictToggleFourStateMidStallTrayLiftControllerWrapper();
-  this->map["unrestrictToggleFourStateMidStallTrayLiftController"] = unrestrictToggleTrayLiftControllerWrapper;
   unrestrictToggleTrayLiftControllerWrapper = new UnrestrictToggleTrayLiftControllerWrapper();
+  this->map["unrestrictToggleFourStateMidStallTrayLiftController"] = unrestrictToggleFourStateMidStallTrayLiftControllerWrapper;
   this->map["unrestrictToggleTrayLiftController"] = unrestrictToggleTrayLiftControllerWrapper;
-
-  this->wrapper = map[string];
-  this->stateController = this->wrapper->getController(trayMotor, maxLimit, raise, lower, util1, util2);
+  this->wrapper = /*map[string]*/unrestrictToggleFourStateMidStallTrayLiftControllerWrapper;
+  this->stateController = this->wrapper->getController(trayMotor, details);
 }
 
 TrayLiftStateControllerFactory::~TrayLiftStateControllerFactory(void)

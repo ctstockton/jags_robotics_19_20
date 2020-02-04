@@ -5,7 +5,7 @@ class ReverseDoubleForebarLiftRaiseObey : public ReverseDoubleForebarLiftState
 {
 public:
   ReverseDoubleForebarLiftRaiseObey(void);
-  ReverseDoubleForebarLiftRaiseObey(pros::Motor*, pros::Motor*);
+  ReverseDoubleForebarLiftRaiseObey(pros::Motor*, pros::Motor*, int, pros::controller_digital_e_t);
   ~ReverseDoubleForebarLiftRaiseObey(void);
 
   void obey(pros::Controller);
@@ -14,5 +14,7 @@ public:
   int getPosition(void);
 private:
   int position;
+  int raiseSpeed;
+  pros::controller_digital_e_t control;
 };
 #endif

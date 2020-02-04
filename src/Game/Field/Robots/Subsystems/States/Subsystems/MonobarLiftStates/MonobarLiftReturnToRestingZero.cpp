@@ -16,7 +16,7 @@ MonobarLiftReturnToRestingZero::~MonobarLiftReturnToRestingZero(void)
 
 void MonobarLiftReturnToRestingZero::obey(pros::Controller master)
 {
-  if(this->leftMotor->get_position() > input1 || this->leftmotor->getPosition() < -input1){
+  if(this->leftMotor->get_position() > position || this->leftMotor->get_position() < -position){
     this->leftMotor->move_absolute(0, speed);
     this->rightMotor->move_absolute(0, speed);
   }

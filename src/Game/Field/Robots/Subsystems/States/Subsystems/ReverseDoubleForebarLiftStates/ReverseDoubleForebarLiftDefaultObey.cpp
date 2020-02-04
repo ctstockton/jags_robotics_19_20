@@ -3,8 +3,9 @@
 ReverseDoubleForebarLiftDefaultObey::ReverseDoubleForebarLiftDefaultObey(void)
 {}
 
-ReverseDoubleForebarLiftDefaultObey::ReverseDoubleForebarLiftDefaultObey(pros::Motor* left, pros::Motor* right):
-position (0)
+ReverseDoubleForebarLiftDefaultObey::ReverseDoubleForebarLiftDefaultObey(pros::Motor* left, pros::Motor* right, int relaxLimit):
+position (0),
+limit (relaxLimit)
 {
   this->leftMotor = left;
   this->rightMotor = right;
@@ -15,7 +16,7 @@ ReverseDoubleForebarLiftDefaultObey::~ReverseDoubleForebarLiftDefaultObey(void)
 
 void ReverseDoubleForebarLiftDefaultObey::obey(pros::Controller master)
 {
-  if((position < -600) || (position > 600)){
+  if((position < -limit) || (position > limit)){
     this->leftMotor->move_absolute(position, 100);
     this->rightMotor->move_absolute(position, 100);
   }

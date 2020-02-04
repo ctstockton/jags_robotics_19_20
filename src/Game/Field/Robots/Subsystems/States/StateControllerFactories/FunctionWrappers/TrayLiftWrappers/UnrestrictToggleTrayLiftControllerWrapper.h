@@ -8,6 +8,6 @@ public:
   UnrestrictToggleTrayLiftControllerWrapper(void);
   ~UnrestrictToggleTrayLiftControllerWrapper(void);
 
-  StateController * getController(pros::Motor*, int, pros::controller_digital_e_t, pros::controller_digital_e_t, pros::controller_digital_e_t, pros::controller_digital_e_t);
+  StateController * getController(pros::Motor*, RobotDetails*);
 };
 #endif

@@ -1,0 +1,7 @@
+#include "ReverseDoubleForebarLiftStateControllerWrapper.h"
+
+ReverseDoubleForebarLiftStateControllerWrapper::ReverseDoubleForebarLiftStateControllerWrapper(void)
+{}
+
+ReverseDoubleForebarLiftStateControllerWrapper::~ReverseDoubleForebarLiftStateControllerWrapper(void)
+{}

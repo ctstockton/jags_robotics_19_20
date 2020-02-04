@@ -2,7 +2,9 @@
 #define ROBOT_SUBSYSTEM_SUBSYSTEM_H
 #include "main.h"
 #include <cstring>
+#include <string>
 #include "States/StateController.h"
+#include "../RobotDetails/RobotDetails.h"
 
 class Subsystem
 {

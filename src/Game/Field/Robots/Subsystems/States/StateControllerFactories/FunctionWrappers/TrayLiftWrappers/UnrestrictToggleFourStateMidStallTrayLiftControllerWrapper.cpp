@@ -8,8 +8,8 @@ UnrestrictToggleFourStateMidStallTrayLiftControllerWrapper::~UnrestrictToggleFou
   delete this->stateController;
 }
 
-StateController * UnrestrictToggleFourStateMidStallTrayLiftControllerWrapper::getController(pros::Motor* motor, int limit, pros::controller_digital_e_t raise, pros::controller_digital_e_t lower, pros::controller_digital_e_t util1, pros::controller_digital_e_t util2)
+StateController * UnrestrictToggleFourStateMidStallTrayLiftControllerWrapper::getController(pros::Motor* motor, RobotDetails* details)
 {
-  this->stateController = new UnrestrictToggleFourStateMidStallTrayLiftController(motor, limit, raise, lower, util1, util2);
- return this->stateController;
+  this->stateController = new UnrestrictToggleFourStateMidStallTrayLiftController(motor, details->getTrayLiftMax(), details->getTrayLiftUp(), details->getTrayLiftDown(), details->getTrayLiftCommand1(), details->getTrayLiftCommand2());
+  return this->stateController;
 }

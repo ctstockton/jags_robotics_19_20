@@ -5,7 +5,7 @@ class ReverseDoubleForebarLiftDefaultObey : public ReverseDoubleForebarLiftState
 {
 public:
   ReverseDoubleForebarLiftDefaultObey(void);
-  ReverseDoubleForebarLiftDefaultObey(pros::Motor*, pros::Motor*);
+  ReverseDoubleForebarLiftDefaultObey(pros::Motor*, pros::Motor*, int);
   ~ReverseDoubleForebarLiftDefaultObey(void);
 
   void obey(pros::Controller);
@@ -14,5 +14,6 @@ public:
   int getPosition(void);
 private:
   int position;
+  int limit;
 };
 #endif

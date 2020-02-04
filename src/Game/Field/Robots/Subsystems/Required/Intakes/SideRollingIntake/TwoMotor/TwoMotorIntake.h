@@ -2,17 +2,16 @@
 #define SIDEROLLINGINTAKE_TWOMOTOR_TWOMOTORINTAKE_H
 #include "../SideRollingIntake.h"
 #include "../SideRollingIntakeTrack.h"
-#include "SingleLeftTrack.h"
-#include "SingleRightTrack.h"
-#include "../../../../States/SubsystemStateControllers/SideRollingIntakeController.h"
+#include "SingleLeftIntakeTrack.h"
+#include "SingleRightIntakeTrack.h"
+#include "../../../../States/StateControllerFactories/SideRollingIntake/SideRollingIntakeFactory.h"
 #include "main.h"
 
 class TwoMotorIntake : public SideRollingIntake
 {
 public:
   TwoMotorIntake(void);
-  TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear);
-  TwoMotorIntake(int L1, int R1, pros::motor_gearset_e gear, int in, int out);
+  TwoMotorIntake(std::string, RobotDetails*);
   virtual ~TwoMotorIntake(void);
 
   void obey(pros::Controller);
@@ -20,5 +19,6 @@ public:
 private:
   SideRollingIntakeTrack * leftIntakeTrack;
   SideRollingIntakeTrack * rightIntakeTrack;
+  SideRollingIntakeFactory * factory;
 };
 #endif

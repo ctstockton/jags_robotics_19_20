@@ -1,8 +1,7 @@
-#ifndef STATES_SUBSYSTEMSTATECONTROLLERS_TRAYLIFTCONTROLLER_H
-#define STATES_SUBSYSTEMSTATECONTROLLERS_TRAYLIFTCONTROLLER_H
+#ifndef TRAYLIFT_CONTROLLER_H
+#define TRAYLIFT_CONTROLLER_H
 #include "AbstractControllers/LiftController.h"
 #include "../Subsystems/TrayLiftStates/TrayLiftDefaultObey.h"
-#include "main.h"
 class TrayLiftController : public LiftController
 {
 public:

@@ -1,0 +1,7 @@
+#include "MonobarLiftStateControllerFactoryFunctionWrapper.h"
+
+MonobarLiftStateControllerFactoryFunctionWrapper::MonobarLiftStateControllerFactoryFunctionWrapper(void)
+{}
+
+MonobarLiftStateControllerFactoryFunctionWrapper::~MonobarLiftStateControllerFactoryFunctionWrapper(void)
+{}
