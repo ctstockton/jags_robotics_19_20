@@ -1,10 +1,10 @@
 #ifndef SCORING_ASSIST_TWO_STATE_SIDE_ROLLING_INTAKE_SC_H
 #define SCORING_ASSIST_TWO_STATE_SIDE_ROLLING_INTAKE_SC_H
-#include "../SideRollingIntakeController.h"
+#include "../SideRollingIntakeSC.h"
 #include "../../Subsystems/SideRollingIntakeStates/SideRollingIntakeDefaultObey.h"
 #include "../../Subsystems/SideRollingIntakeStates/SideRollingIntakeScoringObey.h"
 #include "../../../Required/Intakes/SideRollingIntake/SideRollingIntakeTrack.h"
-class ScoringAssistTwoStateSideRollingIntakeSC : public SideRollingIntakeController
+class ScoringAssistTwoStateSideRollingIntakeSC : public SideRollingIntakeSC
 {
 public:
   ScoringAssistTwoStateSideRollingIntakeSC(void);
@@ -15,5 +15,6 @@ public:
 private:
   SideRollingIntakeDefaultObey * defaultState;
   SideRollingIntakeScoringObey * scoringState;
+  int i;
 };
 #endif

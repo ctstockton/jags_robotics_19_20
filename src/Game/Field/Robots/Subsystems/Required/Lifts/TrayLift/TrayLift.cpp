@@ -7,7 +7,7 @@ TrayLift::TrayLift(void)
 TrayLift::TrayLift(std::string string, RobotDetails* details)
 {
   this->trayMotor = new pros::Motor(details->getTrayLiftMotor1(), details->getLiftGearset(), true);
-  this->factory = new TrayLiftStateControllerFactory(string, this->trayMotor, details);
+  this->factory = new TrayLiftSCFactory(string, this->trayMotor, details);
   this->stateController = this->factory->getController();
   this->trayMotor->tare_position();
 }

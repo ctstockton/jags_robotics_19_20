@@ -8,7 +8,7 @@ FourMotorDrive::FourMotorDrive(RobotDetails * details)
 {
   this->leftDriveTrack = new DoubleLeftTrack(details->getLeftDriveMotor1(), details->getLeftDriveMotor2(), details->getDriveGearset());
   this->rightDriveTrack = new DoubleRightTrack(details->getRightDriveMotor1(), details->getRightDriveMotor2(), details->getDriveGearset());
-  this->stateController = new TankDriveController(this->leftDriveTrack, this->rightDriveTrack);
+  this->stateController = new TankDriveSC(this->leftDriveTrack, this->rightDriveTrack);
   this->driveConstant = details->getDriveConstant();
   this->turnConstant = details->getTurnConstant()*1.5;
   std::cout << "test2" << std::endl;

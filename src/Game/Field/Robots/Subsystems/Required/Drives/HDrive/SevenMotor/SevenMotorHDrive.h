@@ -1,7 +1,7 @@
 #ifndef SEVEN_MOTOR_H_DRIVE_H
 #define SEVEN_MOTOR_H_DRIVE_H
 #include "../HDrive.h"
-#include "../../../../States/SubsystemStateControllers/HDriveController.h"
+#include "../../../../States/SubsystemStateControllers/HDriveSC.h"
 #include "../../TankDrive/SixMotor/SixMotorDrive.h"
 #include "SingleHTrack.h"
 

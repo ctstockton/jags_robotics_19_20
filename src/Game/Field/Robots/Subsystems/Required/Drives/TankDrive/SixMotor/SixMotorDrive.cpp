@@ -4,12 +4,12 @@
 SixMotorDrive::SixMotorDrive(void)
 {}
 
-SixMotorDrive::SixMotorDrive(int L1, int L2, int L3, int R1, int R2, int R3, pros::motor_gearset_e gear, float driveConstant)
+SixMotorDrive::SixMotorDrive(RobotDetails* details)
 {
-  this->leftDriveTrack = new TripleLeftTrack(L1, L2, L3, gear);
-  this->rightDriveTrack = new TripleRightTrack(R1, R2, R3, gear);
-  this->stateController = new TankDriveController(this->leftDriveTrack, this->rightDriveTrack);
-  this->driveConstant = driveConstant;
+  this->leftDriveTrack = new TripleLeftTrack(details->getLeftDriveMotor1(), details->getLeftDriveMotor2(), details->getLeftDriveMotor3(), details->getDriveGearset());
+  this->rightDriveTrack = new TripleRightTrack(details->getRightDriveMotor1(), details->getRightDriveMotor2(), details->getRightDriveMotor3(), details->getDriveGearset());
+  this->stateController = new TankDriveSC(this->leftDriveTrack, this->rightDriveTrack);
+  this->driveConstant = details->getDriveGearset();
 }
 
 SixMotorDrive::~SixMotorDrive(void)

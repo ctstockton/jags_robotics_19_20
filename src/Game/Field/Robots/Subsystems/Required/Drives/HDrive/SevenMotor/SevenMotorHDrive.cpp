@@ -8,7 +8,7 @@ SevenMotorHDrive::SevenMotorHDrive(RobotDetails* details)
   this->leftDriveTrack = new TripleLeftTrack(details->getLeftDriveMotor1(), details->getLeftDriveMotor2(), details->getLeftDriveMotor3(), details->getDriveGearset());
   this->rightDriveTrack = new TripleRightTrack(details->getRightDriveMotor1(), details->getRightDriveMotor2(), details->getRightDriveMotor3(), details->getDriveGearset());
   this->hDriveTrack = new SingleHTrack(details->getHDriveMotor1(), details->getDriveGearset());
-  this->stateController = new HDriveController(this->leftDriveTrack, this->rightDriveTrack, this->hDriveTrack);
+  this->stateController = new HDriveSC(this->leftDriveTrack, this->rightDriveTrack, this->hDriveTrack);
   this->driveConstant = details->getDriveConstant();
 }
 

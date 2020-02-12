@@ -4,7 +4,7 @@
 #include "../SideRollingIntakeTrack.h"
 #include "SingleLeftIntakeTrack.h"
 #include "SingleRightIntakeTrack.h"
-#include "../../../../States/StateControllerFactories/SideRollingIntake/SideRollingIntakeFactory.h"
+#include "../../../../States/StateControllerFactories/SideRollingIntake/SideRollingIntakeSCFactory.h"
 #include "main.h"
 
 class TwoMotorIntake : public SideRollingIntake
@@ -19,6 +19,6 @@ public:
 private:
   SideRollingIntakeTrack * leftIntakeTrack;
   SideRollingIntakeTrack * rightIntakeTrack;
-  SideRollingIntakeFactory * factory;
+  SideRollingIntakeSCFactory * factory;
 };
 #endif

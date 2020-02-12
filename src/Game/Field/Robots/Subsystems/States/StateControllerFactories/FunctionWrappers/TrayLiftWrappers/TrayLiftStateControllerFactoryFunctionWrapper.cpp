@@ -1,7 +1,0 @@
-#include "TrayLiftStateControllerFactoryFunctionWrapper.h"
-
-TrayLiftStateControllerFactoryFunctionWrapper::TrayLiftStateControllerFactoryFunctionWrapper(void)
-{}
-
-TrayLiftStateControllerFactoryFunctionWrapper::~TrayLiftStateControllerFactoryFunctionWrapper(void)
-{}

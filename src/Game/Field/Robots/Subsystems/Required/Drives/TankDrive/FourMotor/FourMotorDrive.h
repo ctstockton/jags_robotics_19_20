@@ -4,7 +4,7 @@
 #include "../TankDrive.h"
 #include "DoubleLeftTrack.h"
 #include "DoubleRightTrack.h"
-#include "../../../../States/SubsystemStateControllers/TankDriveController.h"
+#include "../../../../States/SubsystemStateControllers/TankDriveSC.h"
 
 class FourMotorDrive : public TankDrive
 {

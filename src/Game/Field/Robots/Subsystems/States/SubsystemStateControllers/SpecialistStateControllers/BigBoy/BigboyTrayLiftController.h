@@ -16,5 +16,6 @@ private:
   TrayLiftMoveThenReturn * positionOne;
   TrayLiftUnrestrictedObey * unrestricted;
   TrayLiftStall * stall;
+  int i;
 };
 #endif

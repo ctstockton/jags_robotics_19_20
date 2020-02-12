@@ -1,8 +1,8 @@
 #ifndef SPECIALISTSTATECONTROLLERS_BIGBOY_BIGBOYMONOBARLIFTCONTROLLER_H
 #define SPECIALISTSTATECONTROLLERS_BIGBOY_BIGBOYMONOBARLIFTCONTROLLER_H
-#include "../../MonobarLiftController.h"
+#include "../../MonobarLiftSC.h"
 #include "../../../Subsystems/MonobarLiftStates/MonobarLiftBigboyCustom.h"
-class BigboyMonobarLiftController : public MonobarLiftController
+class BigboyMonobarLiftController : public MonobarLiftSC
 {
 public:
   BigboyMonobarLiftController(void);
@@ -12,5 +12,6 @@ public:
   void obey(pros::Controller);
 private:
   MonobarLiftBigboyCustom bigboy;
+  int i;
 };
 #endif

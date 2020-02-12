@@ -8,7 +8,7 @@ TwoMotorIntake::TwoMotorIntake(std::string string, RobotDetails * details)
 {
   this->leftIntakeTrack = new SingleLeftIntakeTrack(details->getLeftIntakeMotor1(), details->getIntakeGearset(), details->getIntakeSpeed(), details->getOuttakeSpeed());
   this->rightIntakeTrack = new SingleRightIntakeTrack(details->getRightIntakeMotor1(), details->getIntakeGearset(), details->getIntakeSpeed(), details->getOuttakeSpeed());
-  factory = new SideRollingIntakeFactory(string, this->leftIntakeTrack, this->rightIntakeTrack, details);
+  factory = new SideRollingIntakeSCFactory(string, this->leftIntakeTrack, this->rightIntakeTrack, details);
   this->stateController = factory->getController();
 }
 
